@@ -1,3 +1,5 @@
+import "./Inventory.scss";
+
 function Inventory(){
 
     return(
@@ -5,3 +7,4 @@ function Inventory(){
     )
 }
 export default Inventory;
+
