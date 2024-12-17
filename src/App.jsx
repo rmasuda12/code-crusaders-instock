@@ -8,11 +8,16 @@ import Warehouse from "./pages/Warehouse/Warehouse.jsx";
 import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd.jsx";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails.jsx";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx";
+import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
 
   return (
     <BrowserRouter>
+
+    <Header />
+
       <Routes>
         <Route path='/warehouse' element={<Warehouse/>}/>
         <Route path='/warehouseadd' element={<WarehouseAdd/>}/>
@@ -23,6 +28,8 @@ function App() {
         <Route path='/inventorydetails' element={<InventoryDetails/>}/>
         <Route path='/inventoryedit' element={<InventoryEdit/>}/>
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   )
 }
