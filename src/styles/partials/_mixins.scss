@@ -10,4 +10,22 @@
     @media screen and (min-width: $breakpoint-desktop) {
         @content;
     }
+
+}
+
+@mixin logo{
+    width: 120px;
+    height: 20px;
+  }
+
+@mixin flex-center ($direction){
+    display: flex;
+    flex-direction: ($direction);
+}
+@mixin reset-list{
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    
+  
 }
