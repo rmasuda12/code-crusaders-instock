@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  background-color: grey; /*$graphite-color;*/
+  background-color: $graphite;
   width: 100%;
   padding: 1rem;
 
@@ -36,13 +36,15 @@
       }
     }
 
-    &__item {
-      // height: 100%;
+    &__item-p3 {
       padding: 1rem;
-      color: white; /*$white-color;*/
+      color: $white;
 
       &:hover {
-        background-color: yellow; /*$instock-color;*/
+        background-color: $instock-black;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        background-color: $instock-black;
         height: 36px;
         // padding: 36px;
         border-radius: 20px;
