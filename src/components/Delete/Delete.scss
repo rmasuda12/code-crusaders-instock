@@ -43,7 +43,7 @@
 .modal__text {
     padding: 1rem;
     @include tablet {
-        padding-left: 4rem;
+        padding: 1rem 4rem;
     }
 
 }
@@ -59,7 +59,7 @@
         position: relative;
         bottom: none;
         justify-content: end;
-        padding-right: 3rem;
+        padding-right: 4rem;
     }
 }
 .modal__button {
