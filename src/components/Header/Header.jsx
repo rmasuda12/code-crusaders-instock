@@ -13,8 +13,8 @@ function Header(){
 
              <nav className='header-nav'>
                 <ul className='header-nav__list'>
-                    <li className='header-nav__item'>Warehouses</li>
-                    <li className='header-nav__item'>Inventory</li>
+                    <li className='header-nav__item-p3' >Warehouses</li>
+                    <li className='header-nav__item-p3'>Inventory</li>
                 </ul>
 
              </nav>
