@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
 
     <Header />
-
+    
       <Routes>
         <Route path='/warehouse' element={<Warehouse/>}/>
         <Route path='/warehouseadd' element={<WarehouseAdd/>}/>
