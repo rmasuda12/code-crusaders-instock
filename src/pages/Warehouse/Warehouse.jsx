@@ -3,68 +3,76 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import SearchHeader from "../../components/SearchHeader/SearchHeader";
-import WarehouseItems from "../../components/WarehouseItems/WarehouseItems.jsx";
+import WarehouseItem from "../../components/WarehouseItem/WarehouseItem";
+import SortIcon from "../../assets/icons/sort-24px.svg";
+import SearchBar from "../../components/SearchBar/SerachBar";
+import "./Warehouse.scss";
 
-import "../../components/WarehouseItems/WarehouseItems.scss";
-
-const warehouses = () => {
+export default function () {
   const navigate = useNavigate();
 
-  // Mocked warehouse data
-  const warehouses = [
-    {
-      id: 1,
-      name: "Manhattan",
-      address: "503 Broadway, New York, USA",
-      contact: "Parmin Aujla",
-    },
-    {
-      id: 2,
-      name: "Washington",
-      address: "33 Pearl Street SW, Washington, USA",
-      contact: "Graeme Lyon",
-    },
-    {
-      id: 3,
-      name: "Jersey",
-      address: "300 Main Street, New Jersey, USA",
-      contact: "Brad MacDonald",
-    },
-    {
-      id: 4,
-      name: "San Fran",
-      address: "890 Brannan Street, San Francisco, USA",
-      contact: "Gary Wong",
-    },
-  ];
-
-  // Handle clicking on a warehouse
-  const handleItemClick = (id) => {
-    navigate(`/warehouses/${id}`);
+  const handleAdd = (e) => {
+    navigate(`/warehouse/add`);
   };
 
   return (
     <div className="warehouses-container">
-      {/* Search Header */}
-      <SearchHeader
-        title="Warehouses"
-        buttonTitle="+ Add New Warehouse"
-        buttonLink="/warehouses/add"
-      />
+      <div className="warehouses">
+        <div className="warehouse-header">
+          <h1 className="warehouse-header__title">Warehouses</h1>
+          <div className="header-interactive">
+            <SearchBar
+              classname="header-interactive__search"
+              placeholder="Search..."
+            />
 
-      {/* Warehouse List */}
-      <div className="warehouses-list">
-        {warehouses.map((warehouse) => (
-          <WarehouseItems
-            key={warehouse.id}
-            warehouse={warehouse}
-            onItemClick={handleItemClick}
-          />
-        ))}
+            <Button
+              classname="header-interactive__add"
+              buttonText="+ Add New Warehouse"
+              link={handleAdd}
+            />
+          </div>
+        </div>
+
+        <div className="warehouse-list">
+          <span className="item-container">
+            <p>INVENTORY ITEM</p>
+            <img
+              className="item-container__icon"
+              src={HeaderChevron}
+              alt="sort icon"
+            />
+          </span>
+          <span className="item-container">
+            <p>ADDRESS</p>
+            <img
+              className="item-container__icon"
+              src={HeaderChevron}
+              alt="sort icon"
+            />
+          </span>
+          <span className="item-container">
+            <p>CONTACT NAME</p>
+            <img
+              className="item-container__icon"
+              src={HeaderChevron}
+              alt="sort icon"
+            />
+          </span>
+          <span className="item-container item-container-contact">
+            <p className="item-container__contact">CONTACT INFORMATION</p>
+            <img
+              className="item-container__icon"
+              src={HeaderChevron}
+              alt="sort icon"
+            />
+          </span>
+          <span className="item-container-actions">
+            <p className="warehouse-list__last">ACTIONS</p>
+          </span>
+        </div>
+        <WareHouseItem />
       </div>
     </div>
   );
-};
-
-export default Warehouses;
+}
