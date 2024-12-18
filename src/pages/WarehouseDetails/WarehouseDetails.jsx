@@ -12,6 +12,7 @@ function WarehouseDetails () {
 return (
     <>
     <WarehouseDetailsComponent />
+    <WarehouseInventoryList />
     
     </>
 );

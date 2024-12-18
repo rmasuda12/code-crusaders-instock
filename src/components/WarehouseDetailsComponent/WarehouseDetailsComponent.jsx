@@ -4,9 +4,18 @@ import { useEffect, useState } from 'react';
 
 function WarehouseDetailsComponent () {
 
-    const [warehousedetails, setWarehouseDetails] = useState([]);
+    const [warehousedetailscomponent, setWarehouseDetailscomponent] = useState([]);
+
+    async function getWarehouseDetails() {
+        const response = await axios.get(`/api/warehouse/${id}`);
+        setWarehouseDetailscomponent(response);
+    }
+    
 
     useEffect(() => {}, []);
+
+
+    
 
 
 return (
