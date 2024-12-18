@@ -5,17 +5,24 @@
 
 .footer{
     width: 100%;
-    background-color: $white-color;
+    background-color: $white;
     padding: 1rem;
    
 
     &-copyryt-text__box{
-        width: 50%;
+        width: 100%;
         @include flex-center(row);
          margin: 0 auto;
          padding: 0;
-        align-items: center;
-        text-align: center;
+         padding-top: 2rem;
+         justify-content: center;
+      
+    }
+    &__copyryt-p3{
+        color: $slate;
+    }
+    &__text-p3{
+        @extend .footer__copyryt-p3;
     }
     
 }
