@@ -31,6 +31,10 @@
     justify-content: end;
 }
 
+.modal__closer {
+    cursor: pointer;
+}
+
 .modal__title {
     font-weight: 600;
     padding: 0 1rem;
@@ -63,7 +67,7 @@
     }
 }
 .modal__button {
-    // padding: 0.5rem 0;
+    cursor: pointer;
     height: 2.25rem;
     width: 50%;
     margin:0.3125rem;
