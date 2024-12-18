@@ -1,4 +1,4 @@
-import Delete from '../../components/DeleteWarehouse/DeleteWarehouse.jsx';
+import DeleteWarehouse from '../../components/DeleteWarehouse/DeleteWarehouse.jsx';
 import { useState } from 'react';
 
 function Warehouse(){
@@ -7,7 +7,7 @@ function Warehouse(){
 
     return(
        <>
-        {isModalOpen? <Delete setIsModalOpen={setIsModalOpen}/> : ""}
+        {isModalOpen? <DeleteWarehouse setIsModalOpen={setIsModalOpen}/> : ""}
        </>
     )
 }

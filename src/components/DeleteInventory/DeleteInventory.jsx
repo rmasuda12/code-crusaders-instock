@@ -1,4 +1,4 @@
-import "./DeleteInventory.scss";
+import "./DeleteInventory.scss"
 import axios from "axios";
 
 function Delete(prop) {
