@@ -10,6 +10,8 @@ import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails.jsx";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx";
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
+//delete later
+import Delete from './components/Delete/Delete.jsx';
 
 function App() {
 
@@ -17,7 +19,8 @@ function App() {
     <BrowserRouter>
 
     <Header />
-
+    <Delete />
+    
       <Routes>
         <Route path='/warehouse' element={<Warehouse/>}/>
         <Route path='/warehouseadd' element={<WarehouseAdd/>}/>
