@@ -39,13 +39,15 @@
      
      }  
 
-   &__item{
-    height: 100%;
+   &__item-p3{
     padding: 1rem;
     color: $white;
    
 
     &:hover{
+        background-color: $instock-black;
+        height: 2.25rem;
+        border-radius: 1.25rem;
         background-color: $instock-black;
         height: 36px;
         padding: 36px;
