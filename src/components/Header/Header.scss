@@ -1,59 +1,59 @@
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
+// @use '../../styles/partials/mixins' as *;
+// @use '../../styles/partials/variables' as *;
 
 
 
-.header{
-    background-color: $graphite-color;
-    width: 100%;
-    padding: 1rem;
+// .header{
+//     // background-color: $graphite-color;
+//     width: 100%;
+//     padding: 1rem;
 
-    @include flex-center(column);
-    align-items: center;
+//     @include flex-center(column);
+//     align-items: center;
 
-    @include tablet{
-        @include flex-center(row);
-        padding: 2rem;
-    }
+//     @include tablet{
+//         @include flex-center(row);
+//         padding: 2rem;
+//     }
 
-    &-logo{
-        @include logo;
-        margin-top: 1rem;
+//     &-logo{
+//         @include logo;
+//         margin-top: 1rem;
 
-        @include tablet {
-            margin-top: 0;
-        }
-    }
+//         @include tablet {
+//             margin-top: 0;
+//         }
+//     }
 
-    &-nav{
-        width: 100%;
+//     &-nav{
+//         width: 100%;
         
-    &__list{
-        @include reset-list;
-        display: flex;
-        justify-content: space-between;
+//     &__list{
+//         @include reset-list;
+//         display: flex;
+//         justify-content: space-between;
 
-        @include tablet{
-            justify-content: flex-end;
-        }
+//         @include tablet{
+//             justify-content: flex-end;
+//         }
      
-     }  
+//      }  
 
-   &__item{
-    // height: 100%;
-    padding: 1rem;
-    color: $white-color;
+//    &__item{
+//     // height: 100%;
+//     padding: 1rem;
+//     color: $white-color;
    
 
-    &:hover{
-        background-color: $instock-color;
-        height: 36px;
-        // padding: 36px;
-        border-radius: 20px;
-        padding-bottom: 2rem;
-    }
+//     &:hover{
+//         background-color: $instock-color;
+//         height: 36px;
+//         // padding: 36px;
+//         border-radius: 20px;
+//         padding-bottom: 2rem;
+//     }
    
-   }
+//    }
 
-  }
-}
+//   }
+// }
