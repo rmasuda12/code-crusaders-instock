@@ -1,7 +1,10 @@
-function WarehouseEdit(){
+function WarehouseEdit() {
+  return (
+    <>
+      <header />
 
-    return(
-       <></>
-    )
+      <footer />
+    </>
+  );
 }
-export default  WarehouseEdit;
+export default WarehouseEdit;
