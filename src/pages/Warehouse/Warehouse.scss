@@ -1,0 +1,10 @@
+.warehouses-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  .warehouses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
