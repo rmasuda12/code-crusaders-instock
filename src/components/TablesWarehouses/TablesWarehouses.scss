@@ -1,0 +1,187 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/_mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+// Mobile Styling
+@include mobile {
+  .warehouse {
+    width: 86%;
+    padding: 16px 24px;
+    border-bottom: 1px solid $cloud;
+
+    &__address-text {
+      padding: 4px 0;
+    }
+
+    &__contact {
+      @include flex(start, space-between);
+      padding-top: 32px;
+      flex-direction: row;
+
+      &-name {
+        width: 44%;
+      }
+
+      &-info {
+        width: 50%;
+      }
+
+      &-text {
+        padding: 4px 0;
+      }
+    }
+
+    &__icons {
+      @include flex(start, space-between);
+      width: 100%;
+      padding-top: 16px;
+      display: none;
+    }
+  }
+
+  .warehouses__search input {
+    width: 90%;
+    margin: 0 auto;
+    padding: 8px;
+    border: 1px solid $cloud;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+}
+
+// Tablet Styling
+@include tablet {
+  .warehouse {
+    width: 91%;
+    padding: 32px;
+
+    &__container {
+      @include flex(start, start);
+      width: 100%;
+    }
+
+    &__address {
+      padding-right: 80px;
+      width: 50%;
+      border-right: 1px solid $cloud;
+    }
+
+    &__contact {
+      width: 100%;
+      @include flex(start, left);
+      padding-top: 0;
+      padding-left: 56px;
+
+      &-name {
+        width: 40%;
+      }
+
+      &-info {
+        padding-left: 64px;
+        width: 40%;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .warehouses__search input {
+    width: 80%;
+    max-width: 400px;
+  }
+}
+
+// Desktop Styling
+@include desktop {
+  .warehouse {
+    width: 90%;
+    height: 4rem;
+    border: none;
+
+    &__address {
+      padding-right: 80px;
+      width: 18%;
+      border: none;
+    }
+
+    &__contact {
+      width: 50%;
+      margin-left: 10rem;
+      border-left: 1px solid $cloud;
+
+      &-name {
+        width: 25%;
+        padding-right: 2rem;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .warehouses__search input {
+    width: 60%;
+    max-width: 500px;
+  }
+}
+
+// Empty State Styling
+.warehouses__empty {
+  text-align: center;
+  color: $slate;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+// Loading Spinner
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid $cloud;
+  border-top-color: $slate;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#root > div > div > section > section {
+  width: 100%;
+}
+
+#root > div > div > section > section > div {
+  display: none;
+}
+
+#root
+  > div
+  > div
+  > section
+  > div.warehouses
+  > div
+  > div.warehouse__container
+  > div.warehouse__contact
+  > div.warehouse__contact-info {
+  justify-content: end;
+}

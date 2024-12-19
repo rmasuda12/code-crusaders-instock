@@ -1,31 +1,42 @@
 @use "./variables" as *;
 
+//added flex,mobile,mobile width mixins by mishal for warehouse tables
+
+@mixin flex($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin mobile {
+  @media (min-width: $mobile-width) {
+    @content;
+  }
+}
+
 @mixin tablet {
-    @media screen and (min-width: $breakpoint-tablet) {
-        @content;
-    }
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media screen and (min-width: $breakpoint-desktop) {
-        @content;
-    }
-
+  @media screen and (min-width: $breakpoint-desktop) {
+    @content;
+  }
 }
 
-@mixin logo{
-    width: 120px;
-    height: 20px;
+@mixin logo {
+  width: 120px;
+  height: 20px;
 }
 
-@mixin flex-center ($direction){
-    display: flex;
-    flex-direction: ($direction);
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: ($direction);
 }
-@mixin reset-list{
-    list-style: none;
-    margin: 0;
-    padding: 1rem;
-    
-  
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
 }

@@ -1,13 +1,11 @@
-import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse.jsx";
-import { useState } from "react";
+import ListTable from "../../components/ListTable/ListTable";
 
-function Warehouse() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
+const WarehousePage = () => {
   return (
     <>
-      {isModalOpen ? <DeleteWarehouse setIsModalOpen={setIsModalOpen} /> : ""}
+      <ListTable page={"warehouses"} />
     </>
   );
-}
-export default Warehouse;
+};
+
+export default WarehousePage;
