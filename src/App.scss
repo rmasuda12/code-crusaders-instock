@@ -4,9 +4,13 @@
 
 * {
   margin: 0;
-  padding: 0; 
+  padding: 0;
   font-family: "TitilliumWeb";
   box-sizing: border-box;
+}
+
+body {
+  background-color: $light-grey;
 }
 
 //page header
@@ -39,7 +43,7 @@ h3, a, button {
   }
 }
 
-//table header 
+//table header
 h4 {
   font-size: 0.6875rem; //11px
   line-height: 1rem; //16px
@@ -59,7 +63,7 @@ h4 {
   }
 }
 
-//body text medium (P2) 
+//body text medium (P2)
 p {
   font-size: 0.8125; //13px
   line-height: 1.25rem; //20px
@@ -70,7 +74,7 @@ p {
 }
 
 // example use <p classname"otherclass p3">
-//body text small 
+//body text small
 .p3 {
   font-size: 0.6875rem; //11px
   line-height: 1rem; //16px

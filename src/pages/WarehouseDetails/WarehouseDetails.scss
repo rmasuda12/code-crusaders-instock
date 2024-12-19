@@ -1,98 +1,98 @@
-@use '../../styles/partials/variables' as *;
-@use '../../styles/partials/mixins' as *;
+// @use '../../styles/partials/variables' as *;
+// @use '../../styles/partials/mixins' as *;
 
 
-.details {
+// .details {
 
-    &__info {
-        display: flex;
-        flex-direction: row;
-        padding: 1rem;
-    }
+//     &__info {
+//         display: flex;
+//         flex-direction: row;
+//         padding: 1rem;
+//     }
 
-    &__arrow {
-        padding: 1rem 0;
-        display: flex;
-        align-items: center;
-    }
+//     &__arrow {
+//         padding: 1rem 0;
+//         display: flex;
+//         align-items: center;
+//     }
 
-    &__city {
-        padding: 1rem 0.5rem;
-        flex-grow: 1;
-    }
+//     &__city {
+//         padding: 1rem 0.5rem;
+//         flex-grow: 1;
+//     }
 
-    &__edit {
-        padding: 1rem;
-        background-color: $instock-indigo;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 50%;
+//     &__edit {
+//         padding: 1rem;
+//         background-color: $instock-indigo;
+//         border-radius: 50%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         height: 50%;
 
-        @include tablet{
-            display: none;
-        }
-    }
+//         @include tablet{
+//             display: none;
+//         }
+//     }
 
-    &__edit--hidden {
-       display: none;
+//     &__edit--hidden {
+//        display: none;
         
-        @include tablet {
-            display: flex;
-            padding: 1rem;
-            background-color: $instock-indigo;
-            border-radius: 40%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            height: 50%;
-        }
-    }
+//         @include tablet {
+//             display: flex;
+//             padding: 1rem;
+//             background-color: $instock-indigo;
+//             border-radius: 40%;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             color: white;
+//             height: 50%;
+//         }
+//     }
 
 
-    &__contact {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2rem;
+//     &__contact {
+//         display: flex;
+//         justify-content: space-between;
+//         margin-top: 2rem;
 
-        @include tablet {
-            flex-direction: row;
-            margin-top: 0;
-            flex-grow: 1;
-            justify-content: space-around;
-            border-left: 1px #BDC5D5 solid;
+//         @include tablet {
+//             flex-direction: row;
+//             margin-top: 0;
+//             flex-grow: 1;
+//             justify-content: space-around;
+//             border-left: 1px #BDC5D5 solid;
 
-        }
+//         }
 
-    }
+//     }
 
-    &__container {
-        border-top: 1px #BDC5D5 solid;
-        border-bottom: 1px #BDC5D5 solid;
-        padding: 1.5rem;
+//     &__container {
+//         border-top: 1px #BDC5D5 solid;
+//         border-bottom: 1px #BDC5D5 solid;
+//         padding: 1.5rem;
 
-        @include tablet {
-            display: flex;
-        }
+//         @include tablet {
+//             display: flex;
+//         }
         
-    }
+//     }
 
-    &__address {
-        @include desktop {
-            padding-right: 10rem;
-        }
-    }
+//     &__address {
+//         @include desktop {
+//             padding-right: 10rem;
+//         }
+//     }
 
-    &__address-info {
-        @include tablet {
-            width: 60%;
-        }
-    }
+//     &__address-info {
+//         @include tablet {
+//             width: 60%;
+//         }
+//     }
 
 
-    &__subtitle {
-        color: $slate;
-    }
-}
+//     &__subtitle {
+//         color: $slate;
+//     }
+// }
