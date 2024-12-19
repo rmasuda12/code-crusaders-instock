@@ -1,0 +1,103 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.details {
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    &__arrow {
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__city {
+        padding: 1rem 0.5rem;
+        flex-grow: 1;
+    }
+
+    &__edit {
+        padding: 0.5rem;
+        background-color: $instock-indigo;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.5rem;
+        width: 2.5rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__edit--hidden {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            padding: 0.5rem;
+            background-color: $instock-indigo;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+            text-decoration: none;
+            gap: 0.5rem;
+            height: 3rem;
+            width: 6rem;
+        }
+    }
+
+
+    &__contact {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        @include tablet {
+            flex-direction: row;
+            margin-top: 0;
+            flex-grow: 1;
+            justify-content: space-around;
+            border-left: 1px $cloud solid;
+
+        }
+
+    }
+
+    &__container {
+        border-top: 1px #BDC5D5 solid;
+        border-bottom: 1px $cloud solid;
+        padding: 1.5rem;
+
+        @include tablet {
+            display: flex;
+        }
+
+    }
+
+    &__address {
+        @include desktop {
+            padding-right: 10rem;
+        }
+    }
+
+    &__address-info {
+        @include tablet {
+            width: 60%;
+        }
+    }
+
+
+    &__subtitle {
+        color: $slate;
+    }
+}

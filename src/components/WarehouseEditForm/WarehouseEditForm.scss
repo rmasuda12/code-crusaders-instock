@@ -1,0 +1,90 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.wh-edit__details {
+  padding: 1rem;
+  @include tablet {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.wh-edit__form {
+  @include tablet {
+    width: 45%;
+  }
+}
+
+.wh-edit__details-header {
+  padding: 1rem 0;
+  color: $instock-black;
+}
+.wh-edit__form-container {
+  @include flex-center(column);
+  border-bottom: 1px solid $cloud;
+  padding: 1rem 0;
+}
+
+.wh-edit__form-label {
+  color: $instock-black;
+  padding-bottom: 0.25rem;
+}
+
+.wh-edit__formfield {
+  height: 2.25rem;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid $cloud;
+  @include tablet {
+    height: 2.375rem;
+  }
+  &:active {
+    border: 1px solid $instock-indigo;
+  }
+}
+
+.wh-edit__cta {
+  display: flex;
+  align-items: center;
+  //   padding: 1rem;
+  @include tablet {
+    padding: 2rem;
+    margin-left: auto;
+  }
+}
+
+.wh-edit__button-reset {
+  height: 2.25rem;
+  margin: 0.5rem;
+  background-color: $white;
+  border: 1px solid $cloud;
+  border-radius: 20px;
+  width: 90%;
+  color: $slate;
+  @include tablet {
+    height: 2.375rem;
+    padding: 0rem 1rem;
+  }
+  &:hover {
+    border: 1px solid $instock-indigo;
+    color: $instock-indigo;
+  }
+}
+
+.wh-edit__button-save {
+  height: 2.25rem;
+  margin: 0.5rem;
+  background-color: $instock-indigo;
+  border: 1px solid $cloud;
+  border-radius: 20px;
+  width: 90%;
+  color: $white;
+  @include tablet {
+    height: 2.375rem;
+    padding: 0rem 1rem;
+  }
+  &:hover {
+    background-color: $graphite;
+  }
+}

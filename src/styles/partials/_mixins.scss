@@ -14,8 +14,8 @@
 }
 
 @mixin logo{
-    width: 120px;
-    height: 20px;
+    width: 8.037rem;
+    height: 1.75rem;
 }
 
 @mixin flex-center ($direction){
@@ -25,25 +25,4 @@
 @mixin reset-list{
     list-style: none;
     margin: 0;
-    padding: 1rem;
-    
-}
-
-@mixin label-padding {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-
-}
-@mixin input-field {
-    padding: 0.5rem;
-    border-radius: 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid $slate;
-}
-@mixin dropdown {
-    width: 100%;
-    @include flex-center(row);
-    justify-content: space-between;
-    @include input-field;
-    padding: 0.76rem;
 }
