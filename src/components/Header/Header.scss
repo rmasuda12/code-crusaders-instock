@@ -61,8 +61,24 @@
        
       }
 
+   &__item-p3{
+    padding: 1rem;
+    color: $white;
+   
+
+    &:hover{
+        background-color: $instock-black;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        background-color: $instock-black;
+        height: 36px;
+        padding: 36px;
+        border-radius: 20px;
+        padding-bottom: 2rem;
+
       &__link{
         text-decoration: none;
       }
+
     }
 }
