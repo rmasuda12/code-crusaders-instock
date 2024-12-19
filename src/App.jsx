@@ -29,6 +29,8 @@ function App() {
         <Route path='/inventoryedit' element={<InventoryEdit/>}/>
       </Routes>
 
+     
+
       <Footer />
     </BrowserRouter>
   )

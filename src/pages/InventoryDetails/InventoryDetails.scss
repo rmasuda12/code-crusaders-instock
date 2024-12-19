@@ -1,0 +1,115 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+
+.itemDetails{
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    @include tablet{
+        padding: 2rem;
+    }
+
+    &__wrap{
+        @include flex-center(row);
+        padding: 1rem;
+        border-bottom: 1px solid $slate;
+        margin-bottom: 1rem;
+    }
+ 
+    &__title-h2{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__container{
+        width: 90%;
+        background: $white;
+        box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+        margin:  0 auto;
+        
+        @include tablet{
+            width: 100%;
+        }
+
+        &-flex{
+            @include tablet{
+                @include flex-center (row);
+            }
+        }
+    }
+
+    &__box{
+        width: 100%;
+        padding-bottom: 1.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        @include tablet{
+            width: 50%;
+        }
+        
+    }
+    &__form{
+        @include flex-center(column);
+
+        @include tablet{
+            width: 90%;
+        }
+    }
+    &__label-h3{
+        
+        @include label-padding;
+    }
+    &__input{
+       @include input-field;
+    }
+    &__text{
+        border-radius: 1.25rem;
+        margin-bottom: 1rem;
+        resize: none;
+    }
+   
+
+    &__btn-frame{
+        width: 100%;
+        height: 4.5rem;
+        @include flex-center(row);
+        justify-content: space-between;
+        background-color: $cloud;
+        padding: 1rem 2rem 1rem 2rem;
+
+        @include tablet{
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+    }
+
+    &__btn{
+        width: 45%;
+        height: 2.25rem;
+        padding: 0 1rem 0 1rem;
+        border-radius: 1.25rem;
+        border: 1px solid $slate;
+        background: $white;
+       
+        @include tablet{
+            width: 15%;
+            height: 2.375rem;
+            margin-left: 1rem;
+        }
+
+        &-active{
+            @extend .itemDetails__btn;
+            background-color: $instock-indigo;
+            color: $white;
+        }
+    }
+
+    &__dropdown{
+        @include dropdown;
+    }
+   
+}

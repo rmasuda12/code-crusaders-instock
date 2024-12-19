@@ -1,3 +1,5 @@
+import './InventoryEdit.scss'
+
 function InventoryEdit(){
 
     return(
