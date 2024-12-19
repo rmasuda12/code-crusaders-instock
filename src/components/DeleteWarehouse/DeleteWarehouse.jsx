@@ -7,8 +7,12 @@ function Delete(prop) {
     }
 
     async function deleteWarehouse() {
-        const deleted = await axios.delete(url);
-        prop.setIsModalOpen(false);
+        try {
+            const deleted = await axios.delete(url);
+            prop.setIsModalOpen(false);  
+        } catch (error) {
+            console.log("delete function failed")
+        }
     }
     return (
         <>
