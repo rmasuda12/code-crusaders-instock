@@ -28,16 +28,38 @@
     &-nav{
         width: 100%;
         
-    &__list{
-        @include reset-list;
-        display: flex;
-        justify-content: space-between;
+       &__list{
+          @include reset-list;
+          display: flex;
+          justify-content: space-between;
+  
+  
+          @include tablet{
+              justify-content: flex-end;
+          }
+       
+        }  
 
-        @include tablet{
-            justify-content: flex-end;
+       &__item-h3{
+        
+        padding: 0.25rem 2rem 0.25rem 2rem;
+        color: $white;
+        text-align: center;
+       
+    
+        &:hover{
+            background-color: $instock-black;
+            // width: 0.25rem;
+            // height: 2.25rem;
+            border-radius: 1.25rem;
+            background-color: $instock-black;
+            // height: 36px;
+            // padding: 36px;
+            border-radius: 20px;
+           
         }
-     
-     }  
+       
+      }
 
    &__item-p3{
     padding: 1rem;
@@ -53,9 +75,10 @@
         padding: 36px;
         border-radius: 20px;
         padding-bottom: 2rem;
-    }
-   
-   }
 
-  }
+      &__link{
+        text-decoration: none;
+      }
+
+    }
 }
