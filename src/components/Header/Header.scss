@@ -4,6 +4,7 @@
 .header {
   background-color: $graphite;
   width: 100%;
+  height: 12.5rem;
   padding: 1rem;
 
   @include flex-center(column);
@@ -11,7 +12,20 @@
 
   @include tablet {
     @include flex-center(row);
-    padding: 2rem;
+    height: 11.625rem;
+  }
+
+  &-container{
+    width: 100%;
+    padding-top: 1rem;
+    @include flex-center(column);
+    align-items: center;
+   
+    @include tablet{
+        @include flex-center(row);
+        justify-content: space-between;
+        margin-bottom: 5rem;
+    }
   }
 
   &-logo {
@@ -20,11 +34,17 @@
 
     @include tablet {
       margin-top: 0;
+      padding-left: 1rem;
     }
   }
 
     &-nav{
         width: 100%;
+        margin-top: 1rem;
+
+        @include tablet{
+            margin-top: 0;
+        }
         
        &__list{
           @include reset-list;
@@ -37,40 +57,36 @@
        
         }  
 
-    &__item-h3 {
-      padding: 0.25rem 2rem 0.25rem 2rem;
-      color: $white;
-      text-align: center;
+        &__item-h3 {
+          padding: 0.25rem 2rem 0.25rem 2rem;
+          color: $white;
+          text-align: center;
 
-      &:hover {
-        background-color: $instock-black;
-        // width: 0.25rem;
-        // height: 2.25rem;
-        border-radius: 1.25rem;
-        background-color: $instock-black;
-        // height: 36px;
-        // padding: 36px;
-        border-radius: 20px;
-      }
-    }
+          &:hover {
+            background-color: $instock-black;
+            border-radius: 1.25rem;
+            background-color: $instock-black;
+            border-radius: 20px;
+          }
+        }
 
-    &__item-p3 {
-      padding: 1rem;
-      color: $white;
+        &__item-p3 {
+          padding: 1rem;
+          color: $white;
 
-      &:hover {
-        background-color: $instock-black;
-        height: 2.25rem;
-        border-radius: 1.25rem;
-        background-color: $instock-black;
-
-        padding: 2.25rem;
-        border-radius: 20px;
-        padding-bottom: 2rem;
-      }
-      &__link {
-        text-decoration: none;
-      }
-    }
-  }
+          &:hover {
+            background-color: $instock-black;
+            height: 2.25rem;
+            border-radius: 1.25rem;
+            background-color: $instock-black;
+            padding: 2.25rem;
+            border-radius: 20px;
+            padding-bottom: 2rem;
+          }
+        }
+    }    
+    
 }
+.header-nav__link{
+    text-decoration: none;
+  }
