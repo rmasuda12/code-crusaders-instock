@@ -10,6 +10,7 @@ import WarehouseDetailsComponent from "./components/WarehouseDetailsComponent/Wa
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import WarehouseList from "./pages/WarehouseList/WarehouseList.jsx";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/inventoryadd" element={<InventoryAdd />} />
         <Route path="/inventorydetails" element={<InventoryDetails />} />
         <Route path="/inventoryedit" element={<InventoryEdit />} />
+        <Route path="/warehouses" element={<WarehouseList />} />
+
       </Routes>
 
       <Footer />
