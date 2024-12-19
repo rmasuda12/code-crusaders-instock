@@ -8,7 +8,7 @@ function WarehouseDetailsComponent () {
     const {id} = useParams();
     const [warehouseDetails, setWarehouseDetails] = useState({});
 
-// Get warehouse details from the API
+// Get warehouse details from the API based on id
 
     async function getWarehouseDetails() {
         const response = await axios.get(`http://localhost:8080/warehouses/${id}`);
@@ -18,19 +18,6 @@ function WarehouseDetailsComponent () {
     useEffect(() => {
         getWarehouseDetails();
     }, [id]);
-
-
-    // const {
-    //     warehouse_name,
-    //     address,
-    //     city,
-    //     country,
-    //     contact_name,
-    //     contact_position,
-    //     contact_phone,
-    //     contact_email,
-    // } = warehouseDetails;
-
 
 return (
     <>
