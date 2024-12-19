@@ -1,5 +1,8 @@
 import "./DeleteInventory.scss"
 import axios from "axios";
+import { useParams } from "react-router-dom";
+
+const baseURL = import.meta.env.VITE_API_URL;
 
 function Delete(prop) {
     function closeModal() {
@@ -7,7 +10,9 @@ function Delete(prop) {
     }
 
     async function deleteWarehouse() {
-        const deleted = await axios.delete(url);
+        let params = useParams();
+        console.log(params);
+        const deleted = await axios.delete(`${baseURL}/warehouses/3`);
         prop.setIsModalOpen(false);
     }
     return (
