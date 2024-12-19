@@ -13,8 +13,14 @@ function Header(){
 
              <nav className='header-nav'>
                 <ul className='header-nav__list'>
-                    <li className='header-nav__item-p3' >Warehouses</li>
-                    <li className='header-nav__item-p3'>Inventory</li>
+                    <Link className='header-nav__link' to='/warehouse'>
+                    <li className='header-nav__item-h3' >Warehouses</li>
+                    </Link>
+                    
+                    <Link className='header-nav__link'  to='/inventory'>
+                    <li className='header-nav__item-h3'>Inventory</li>
+                    </Link>
+                   
                 </ul>
 
              </nav>
