@@ -33,7 +33,6 @@
           display: flex;
           justify-content: space-between;
   
-  
           @include tablet{
               justify-content: flex-end;
           }
@@ -49,14 +48,9 @@
     
         &:hover{
             background-color: $instock-black;
-            // width: 0.25rem;
-            // height: 2.25rem;
             border-radius: 1.25rem;
             background-color: $instock-black;
-            // height: 36px;
-            // padding: 36px;
             border-radius: 20px;
-           
         }
        
       }
