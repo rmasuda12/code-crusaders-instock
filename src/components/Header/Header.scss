@@ -1,29 +1,27 @@
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
+.header {
+  background-color: $graphite;
+  width: 100%;
+  padding: 1rem;
 
+  @include flex-center(column);
+  align-items: center;
 
-.header{
-    background-color: $graphite;
-    width: 100%;
-    padding: 1rem;
+  @include tablet {
+    @include flex-center(row);
+    padding: 2rem;
+  }
 
-    @include flex-center(column);
-    align-items: center;
+  &-logo {
+    @include logo;
+    margin-top: 1rem;
 
-    @include tablet{
-        @include flex-center(row);
-        padding: 2rem;
+    @include tablet {
+      margin-top: 0;
     }
-
-    &-logo{
-        @include logo;
-        margin-top: 1rem;
-
-        @include tablet {
-            margin-top: 0;
-        }
-    }
+  }
 
     &-nav{
         width: 100%;
@@ -39,24 +37,40 @@
        
         }  
 
-       &__item-h3{
-        
-        padding: 0.25rem 2rem 0.25rem 2rem;
-        color: $white;
-        text-align: center;
-       
-    
-        &:hover{
-            background-color: $instock-black;
-            border-radius: 1.25rem;
-            background-color: $instock-black;
-            border-radius: 20px;
-        }
-       
-      }
+    &__item-h3 {
+      padding: 0.25rem 2rem 0.25rem 2rem;
+      color: $white;
+      text-align: center;
 
-      &__link{
+      &:hover {
+        background-color: $instock-black;
+        // width: 0.25rem;
+        // height: 2.25rem;
+        border-radius: 1.25rem;
+        background-color: $instock-black;
+        // height: 36px;
+        // padding: 36px;
+        border-radius: 20px;
+      }
+    }
+
+    &__item-p3 {
+      padding: 1rem;
+      color: $white;
+
+      &:hover {
+        background-color: $instock-black;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        background-color: $instock-black;
+
+        padding: 2.25rem;
+        border-radius: 20px;
+        padding-bottom: 2rem;
+      }
+      &__link {
         text-decoration: none;
       }
     }
+  }
 }
