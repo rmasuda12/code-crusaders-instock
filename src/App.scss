@@ -34,7 +34,7 @@ h2 {
 }
 
 //labels, links, & buttons
-h3 a button {
+h3, a, button {
   font-size: 0.8125rem; //13px
   line-height: 1rem; //20px
   @include tablet {

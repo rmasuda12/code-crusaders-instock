@@ -30,14 +30,14 @@
         justify-content: center;
         height: 50%;
 
-        @include tablet{
+        @include tablet {
             display: none;
         }
     }
 
     &__edit--hidden {
-       display: none;
-        
+        display: none;
+
         @include tablet {
             display: flex;
             padding: 1rem;
@@ -76,7 +76,7 @@
         @include tablet {
             display: flex;
         }
-        
+
     }
 
     &__address {
