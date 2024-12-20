@@ -4,6 +4,8 @@
 
 .details {
 
+    background-color: $white;
+
     &__info {
         display: flex;
         flex-direction: row;
@@ -80,6 +82,7 @@
 
         @include tablet {
             display: flex;
+            border-bottom: none;
         }
 
     }
