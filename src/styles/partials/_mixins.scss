@@ -1,5 +1,19 @@
 @use "./variables" as *;
 
+//added flex,mobile,mobile width mixins by mishal for warehouse tables
+
+@mixin flex($align: center, $justify: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+  }
+  
+  @mixin mobile {
+    @media (min-width: $mobile-width) {
+      @content;
+    }
+  }
+//end
 @mixin tablet {
     @media screen and (min-width: $breakpoint-tablet) {
         @content;
@@ -14,8 +28,8 @@
 }
 
 @mixin logo{
-    width: 120px;
-    height: 20px;
+    width: 8.037rem;
+    height: 1.75rem;
 }
 
 @mixin flex-center ($direction){
@@ -25,7 +39,4 @@
 @mixin reset-list{
     list-style: none;
     margin: 0;
-    padding: 1rem;
-    
-  
 }
