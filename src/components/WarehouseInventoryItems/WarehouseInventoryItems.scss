@@ -1,3 +1,171 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
+.inventory-details {
+    padding: 0 1.5rem;
+    border-bottom: 1px solid $cloud;
+    background-color: $white;
+
+    @include tablet{
+        display: flex;
+        padding: 0;
+        padding-left: 1.5rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1.5rem;
+    
+            @include tablet {
+                flex-grow: 1;
+                justify-content: space-between;
+                padding-bottom: 0;
+                padding: 1rem 0;
+                flex-basis: 0;
+                
+            }
+    }
+
+
+        &__left {
+            flex-grow: 1;
+            flex-basis: 1;
+
+            @include tablet {
+                display: flex;
+                flex-grow: 1;
+                flex-basis: auto;
+                // justify-content: space-between;
+                }
+
+        }
+
+        &__right {
+            flex-grow: 2;
+            flex-basis: 1;
+
+            @include tablet {
+                display: flex;
+                flex-grow: 1;
+                flex-basis: auto;
+                justify-content: space-between;
+            }
+        }
+    
+    &__click-item {
+        display: flex;
+        align-items: center;
+        color: $instock-indigo;
+
+        @include tablet {
+            flex-grow: 1;
+            flex-basis: auto;
+        }
+    }
+
+    &__click-item-value {
+        @include tablet {
+            flex-grow: 1;
+            flex-basis: 1;
+        }
+    }
+
+    &__items {
+        color: $slate;
+        padding-top: 1.5rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1.5rem;
+
+        @include tablet {
+            padding-right: 1.5rem;
+            
+            padding-bottom: 0;
+            align-items: center;
+        }
+    }
+
+
+
+    &__status {
+        color: $green;
+        background-color: #D0F0C0;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.40rem;
+        width: 5rem;
+
+        @include tablet {
+            width: 7rem;
+            flex-grow: 1;
+            flex-basis: 1;
+            
+        }
+    }
+
+    &__quantity-value {
+
+        @include tablet {
+            display: flex;
+            flex-grow: 1;
+            flex-basis: auto;
+        }
+    }
+
+    &__status--red {
+        color: $red;
+        background-color: #FBCEB1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0.40rem;
+        width: 6rem;
+
+        @include tablet {
+            width: 7rem;
+            flex-grow: 1;
+            flex-basis: 1;
+            
+            // justify-content: center;
+        }
+    }
+
+
+    &__hidden {
+
+        display: none;
+
+        @include tablet {
+            display: flex;
+            background-color: $light-grey;
+            color: $slate;
+            padding: 1rem 1.5rem ;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+    }
+
+    &__hidden-icon {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    &__hidden-icon--status {
+        display: flex;
+        align-items: center;
+        flex-grow: 2;
+    }
+}
