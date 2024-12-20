@@ -8,6 +8,8 @@
 
     @include tablet{
         display: flex;
+        padding: 0;
+        padding-left: 1.5rem;
     }
 
     &__container {
@@ -17,8 +19,9 @@
     
             @include tablet {
                 flex-grow: 1;
-                padding: 1rem;
                 justify-content: space-between;
+                padding-bottom: 0;
+                padding: 1rem 0;
             }
     }
 
@@ -29,8 +32,8 @@
 
             @include tablet {
                 display: flex;
-                flex-grow: 1;
-                justify-content: space-between;
+                // flex-grow: 1;
+                // justify-content: space-between;
                 }
 
         }
@@ -41,8 +44,8 @@
 
             @include tablet {
                 display: flex;
-                flex-grow: 1;
-                justify-content: space-between;
+                // flex-grow: 1;
+                // justify-content: space-between;
             }
         }
     
@@ -50,6 +53,16 @@
         display: flex;
         align-items: center;
         color: $instock-indigo;
+
+        @include tablet {
+            flex-grow: 2;
+        }
+    }
+
+    &__click-item-value {
+        @include tablet {
+            flex-grow: 1;
+        }
     }
 
     &__items {
@@ -67,10 +80,14 @@
         padding-bottom: 1.5rem;
 
         @include tablet {
-          padding: 1rem;
-          
+            padding-right: 1.5rem;
+            
+            padding-bottom: 0;
+            align-items: center;
         }
     }
+
+
 
     &__status{
         color: $green;
@@ -81,6 +98,19 @@
         justify-content: center;
         padding: 0.40rem;
         width: 5rem;
+
+        @include tablet {
+            flex-grow: 2;
+            
+            
+        }
+    }
+
+    &__quantity-value {
+        @include tablet {
+            display: flex;
+            flex-grow: 1;
+        }
     }
 
     &__status--red {
@@ -94,6 +124,7 @@
 
         @include tablet {
             width: 7rem;
+            flex-grow: 1;
         }
     }
 
@@ -117,5 +148,12 @@
     &__hidden-icon {
         display: flex;
         align-items: center;
+        flex-grow: 1;
+    }
+
+    &__hidden-icon--status {
+        display: flex;
+        align-items: center;
+        flex-grow: 2;
     }
 }

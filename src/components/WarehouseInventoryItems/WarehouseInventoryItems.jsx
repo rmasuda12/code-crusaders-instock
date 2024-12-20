@@ -19,7 +19,7 @@ function WarehouseInventoryItems () {
                     <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" fill="#5C667E"/>
                     </svg>
                 </h4>
-                <h4 className='inventory-details__hidden-icon'>
+                <h4 className='inventory-details__hidden-icon--status'>
                     STATUS
                     <svg width="24" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" fill="#5C667E"/>
@@ -43,13 +43,13 @@ function WarehouseInventoryItems () {
                         </svg>
                     </h3>
                     <h4 className='inventory-details__items'>CATEGORY:</h4>
-                    <p>Electronics</p>
+                    <p className='inventory-details__click-item-value'>Electronics</p>
                 </div>
                 <div className='inventory-details__right'>
                     <h4 className='inventory-details__items'>STATUS:</h4>
                     <h3 className='inventory-details__status'> IN STOCK</h3>
                     <h4 className='inventory-details__items'>QTY:</h4>
-                    <p>500</p>
+                    <p className='inventory-details__quantity-value'>500</p>
                 </div>
             </section>
            
@@ -80,14 +80,14 @@ function WarehouseInventoryItems () {
                         </svg>
                     </h3>
                     <h4 className='inventory-details__items'>CATEGORY:</h4>
-                    <p>Electronics</p>
+                    <p className='inventory-details__click-item-value'>Electronics</p>
                 </div>
 
                 <div className='inventory-details__right'>
                     <h4 className='inventory-details__items'>STATUS:</h4>
                     <h3 className='inventory-details__status--red'> OUT OF STOCK</h3>
                     <h4 className='inventory-details__items'>QTY:</h4>
-                    <p>500</p>
+                    <p className='inventory-details__quantity-value'>500</p>
                 </div>
             </section>
            
