@@ -64,7 +64,8 @@ return (
             <div className='details__status-quantity'>
                 <div className='details__status'>
                     <h4 className='details__subtitle'>STATUS:</h4>
-                    {InventoryDetails.status==='In Stock'?         <p className='details__stock'>IN STOCK</p>:
+                    {InventoryDetails.status==='In Stock'?         
+                    <p className='details__stock'>IN STOCK</p>:
                     <p className='details__stock--not'>OUT OF STOCK</p>
                     }
                 </div>
