@@ -8,25 +8,22 @@ function WarehouseEditForm() {
   const params = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    warehouseName: "",
-    streetAddress: "",
+    warehouse_name: "",
+    address: "",
     city: "",
     country: "",
-    contactName: "",
-    position: "",
-    phoneNumber: "",
-    email: "",
+    contact_name: "",
+    contact_position: "",
+    contact_phone: "",
+    contact_email: "",
   });
-  const [warehouseData, setWarehouseData] = useState(formData);
 
-  const handleInputChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setFormData((prevData) => {
-      const updatedData = { ...prevData };
-      updatedData[name] = value;
-      return updatedData;
-    });
+  const handleChangeForm = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   useEffect(() => {
@@ -36,37 +33,23 @@ function WarehouseEditForm() {
           `http://localhost:8080/warehouses/${params.id}`
         );
         console.log("response:", response.data);
-        setWarehouseData(response.data);
+        setFormData(response.data);
       } catch (error) {
         console.log(error);
       }
     }
     getClickedWarehouseData();
-  }, []);
+  }, [params.id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit");
 
-    const updatedFields = {};
-
-    for (const key in formData) {
-      if (formData[key] !== warehouseData[key]) {
-        // If it's changed, add it to the updatedFields object
-        updatedFields[key] = formData[key];
-      }
-    }
-
-    // If no fields were updated, exit the function
-    if (Object.keys(updatedFields).length === 0) {
-      console.log("No fields were updated.");
-      return;
-    }
+    const { updated_at, created_at, ...dataToSend } = formData;
 
     try {
       const response = await axios.put(
         `http://localhost:8080/warehouses/${params.id}`,
-        updatedFields
+        dataToSend
       );
     } catch (error) {
       console.log(error);
@@ -90,10 +73,9 @@ function WarehouseEditForm() {
             </label>
             <input
               type="text"
-              name="warehouseName"
-              onChange={handleInputChange}
-              value={formData.warehouseName}
-              placeholder={warehouseData.warehouse_name}
+              name="warehouse_name"
+              onChange={handleChangeForm}
+              value={formData.warehouse_name}
               className="wh-edit__formfield"
             />
             <label className="wh-edit__form-label">
@@ -101,10 +83,9 @@ function WarehouseEditForm() {
             </label>
             <input
               type="text"
-              name="streetAddress"
-              onChange={handleInputChange}
-              value={formData.streetAddress}
-              placeholder={warehouseData.address}
+              name="address"
+              onChange={handleChangeForm}
+              value={formData.address}
               className="wh-edit__formfield"
             />
             <label className="wh-edit__form-label">
@@ -113,9 +94,8 @@ function WarehouseEditForm() {
             <input
               type="text"
               name="city"
-              onChange={handleInputChange}
+              onChange={handleChangeForm}
               value={formData.city}
-              placeholder={warehouseData.city}
               className="wh-edit__formfield"
             />
             <label className="wh-edit__form-label">
@@ -124,9 +104,8 @@ function WarehouseEditForm() {
             <input
               type="text"
               name="country"
-              onChange={handleInputChange}
+              onChange={handleChangeForm}
               value={formData.country}
-              placeholder={warehouseData.country}
               className="wh-edit__formfield"
             />
           </div>
@@ -137,10 +116,9 @@ function WarehouseEditForm() {
             </label>
             <input
               type="text"
-              name="contactName"
-              onChange={handleInputChange}
-              value={formData.contactName}
-              placeholder={warehouseData.contact_name}
+              name="contact_name"
+              onChange={handleChangeForm}
+              value={formData.contact_name}
               className="wh-edit__formfield"
             />
             <label className="wh-edit__form-label">
@@ -148,10 +126,9 @@ function WarehouseEditForm() {
             </label>
             <input
               type="text"
-              name="position"
-              onChange={handleInputChange}
-              value={formData.position}
-              placeholder={warehouseData.contact_position}
+              name="contact_position"
+              onChange={handleChangeForm}
+              value={formData.contact_position}
               className="wh-edit__formfield"
             />
             <label className="wh-edit__form-label">
@@ -159,10 +136,9 @@ function WarehouseEditForm() {
             </label>
             <input
               type="text"
-              name="phoneNumber"
-              onChange={handleInputChange}
-              value={formData.phoneNumber}
-              placeholder={warehouseData.contact_phone}
+              name="contact_phone"
+              onChange={handleChangeForm}
+              value={formData.contact_phone}
               className="wh-edit__formfield"
             />
             <label className="wh-edit__form-label">
@@ -170,10 +146,9 @@ function WarehouseEditForm() {
             </label>
             <input
               type="text"
-              name="email"
-              onChange={handleInputChange}
-              value={formData.email}
-              placeholder={warehouseData.contact_email}
+              name="contact_email"
+              onChange={handleChangeForm}
+              value={formData.contact_email}
               className="wh-edit__formfield"
             />
           </div>
