@@ -1,18 +1,23 @@
 import './InventoryEdit.scss'
 import arrowBack from '../../assets/icons/arrow_back-24px.svg';
 import InventoryEditForm from '../../components/InventoryEditForm/InventoryEditForm';
-// import { useState } from 'react';
+import { useNavigate,useParams } from 'react-router-dom';
+
+
 
 function InventoryEdit(props){
-
-    // const [saveEdit, setSaveEdit] = useState([]);
+   const navigate = useNavigate();
+    
 
     function handleFormSave(formData){
         console.log('Save button clicked:', formData);
 
     }
-    function handleCancel(){
-      console.log('cancel button clicked');
+
+    function handleCancel(e){
+      e.preventDefault();
+      console.log('cancel button clicked'); /// clear this
+      navigate('/inventorydetails');
 
   }
 
