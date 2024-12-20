@@ -1,29 +1,35 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.wh-edit__details {
-  padding: 1rem;
-  @include tablet {
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-  }
-}
+// .wh-edit__details {
+//   padding: 1rem;
+//   @include tablet {
+//     padding: 2rem;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+// }
 
 .wh-edit__form {
   @include tablet {
-    width: 45%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.wh-edit__form-container {
+  width: 100%;
+  @include flex-center(column);
+  border-bottom: 1px solid $cloud;
+  padding: 1rem 1rem;
+  @include tablet {
+    width: 50%;
   }
 }
 
 .wh-edit__details-header {
   padding: 1rem 0;
   color: $instock-black;
-}
-.wh-edit__form-container {
-  @include flex-center(column);
-  border-bottom: 1px solid $cloud;
-  padding: 1rem 0;
 }
 
 .wh-edit__form-label {
@@ -39,8 +45,9 @@
   @include tablet {
     height: 2.375rem;
   }
-  &:active {
+  &:focus {
     border: 1px solid $instock-indigo;
+    outline: none;
   }
 }
 
