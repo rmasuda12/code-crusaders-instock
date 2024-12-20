@@ -40,3 +40,21 @@
     list-style: none;
     margin: 0;
 }
+@mixin label-padding {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+@mixin input-field {
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid $slate;
+}
+@mixin dropdown {
+    width: 100%;
+    @include flex-center(row);
+    justify-content: space-between;
+    @include input-field;
+    padding: 0.76rem;
+}

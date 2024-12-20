@@ -17,13 +17,14 @@
   .wh-edit__card {
     @include flex-center(column);
     width: 100%;
-    // height: 57.625rem;
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 3px;
     background-color: $white;
 
-    .wh-edit__header {
+    .warehouse-edit__header-link {
       width: 100%;
       height: 5rem;
+      text-decoration: none;
+      color: inherit;
       @include flex-center(row-reverse);
       align-items: center;
       justify-content: center;
