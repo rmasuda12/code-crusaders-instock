@@ -7,8 +7,6 @@
 .itemAvail{
     width: 100%;
     padding-top: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
 
     @include tablet{
         width: 50%;
@@ -33,10 +31,34 @@
           width: 100%;
       }
     }
+    &__quantity{
+        @extend .itemAvail__frame;
+    }
 
     &__dropdown{
        @include dropdown;
     }
+
+    &__radio{
+        width: 1.25rem;
+        margin-right: 1rem;
+
+        &:hover{
+            border: 1px solid $instock-indigo;
+        }
+
+        // &::after{
+        //     border: 1px solid $slate;
+        // }
+
+    }
+}
+
+.itemAvail__list{
+    width: 8rem;
+    list-style: none;
+    @include flex-center(row);
+    justify-content: flex-start;
 }
 
   
