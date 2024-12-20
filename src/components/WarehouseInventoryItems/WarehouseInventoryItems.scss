@@ -18,11 +18,11 @@
         padding-bottom: 1.5rem;
     
             @include tablet {
-                flex-grow: 1;
                 justify-content: space-between;
                 padding-bottom: 0;
                 padding: 1rem 0;
-                flex-basis: 0;
+                flex-basis: auto;
+                width: 100%;
                 
             }
     }
@@ -33,10 +33,13 @@
             flex-basis: 1;
 
             @include tablet {
-                display: flex;
-                flex-grow: 1;
-                flex-basis: auto;
+                // display: none;
+                // flex-grow: 1;
+                // flex-basis: auto;
                 // justify-content: space-between;
+                // display: flex;
+                //     align-items: center;
+                //     flex-grow: 1;
                 }
 
         }
@@ -48,8 +51,8 @@
             @include tablet {
                 display: flex;
                 flex-grow: 1;
-                flex-basis: auto;
-                justify-content: space-between;
+                // flex-basis: auto;
+                // justify-content: space-between;
             }
         }
     
@@ -59,15 +62,16 @@
         color: $instock-indigo;
 
         @include tablet {
-            flex-grow: 1;
-            flex-basis: auto;
+            // flex-grow: 1;
+            
+                // flex-grow: 1;
         }
     }
 
     &__click-item-value {
         @include tablet {
-            flex-grow: 1;
-            flex-basis: 1;
+            // flex-grow: 1;
+            // flex-basis: 1;
         }
     }
 
@@ -107,8 +111,8 @@
 
         @include tablet {
             width: 7rem;
-            flex-grow: 1;
-            flex-basis: 1;
+            // flex-grow: 1;
+            // flex-basis: 0;
             
         }
     }
@@ -117,8 +121,8 @@
 
         @include tablet {
             display: flex;
-            flex-grow: 1;
-            flex-basis: auto;
+            // flex-grow: 1;
+            // flex-basis: 1;
         }
     }
 
@@ -133,8 +137,8 @@
 
         @include tablet {
             width: 7rem;
-            flex-grow: 1;
-            flex-basis: 1;
+            // flex-grow: 1;
+            // flex-basis: 0;
             
             // justify-content: center;
         }
@@ -160,12 +164,18 @@
     &__hidden-icon {
         display: flex;
         align-items: center;
-        flex-grow: 1;
+        // flex-grow: 1;
+        flex: 25%;
     }
 
     &__hidden-icon--status {
         display: flex;
         align-items: center;
-        flex-grow: 2;
+        // flex-grow: 1;
+        flex: 25%;
+    }
+
+    .column {
+    width: 25%;
     }
 }
