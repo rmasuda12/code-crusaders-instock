@@ -82,10 +82,22 @@
     }
 
     &__description-category {
+        padding: 0 0.5rem;
         @include tablet {
+            width: 50%;
+            padding-right: 2.25rem;
+            border-right: 1px solid $cloud;
+        }
+    }
+
+    &__extra-info{
+        padding: 0 0.5rem;
+        @include tablet {
+            padding-left: 2.25rem;
             width: 50%;
         }
     }
+
     &__status-quantity {
         display: flex;
     }
@@ -97,19 +109,15 @@
     }
 
     &__stock {
-        height: 1.5rem;
         display: inline-block;
         color: $green;
         background-color: transparentize($green, 0.93);
         border-radius: 20px;
         align-items: center;
         justify-content: center;
-        padding: 0 0.5rem;
+        padding: 0.125rem 0.5rem;
         margin-top: 0.125rem;
-
         @include tablet {
-            height: 1.625rem;
-            width: 7rem;
             flex-grow: 1;
             flex-basis: 1;
             
@@ -117,17 +125,15 @@
     }
 
     &__stock--not {
-        // height: 1.5rem;
         display: inline-block;
         color: $red;
         background: transparentize($red, 0.93);
         border-radius: 20px;
         align-items: center;
         justify-content: center;
-        padding: 0.125 0.5rem;
+        padding: 0.125rem 0.5rem;
+        margin-top: 0.125rem;
         @include tablet {
-            height: 1.625rem;
-            width: 7rem;
             flex-grow: 1;
             flex-basis: 1;
             
