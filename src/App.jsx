@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import WarehouseList from "./pages/WarehouseList/WarehouseList.jsx";
 import InventoryList from "./pages/InventoryList/InventoryList.jsx";
 
+
 function App() {
   return (
     <BrowserRouter>
