@@ -74,20 +74,20 @@ function WarehouseInventoryItems () {
 
                 <div className='inventory-details__left'>
                     <h4 className='inventory-details__items'>INVENTORY ITEM:</h4>
-                    <h3 className='inventory-details__click-item'>Television 
+                    <h3 className='inventory-details__click-item'>Gym Bag 
                         <svg className='inventory-details__chevron' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z" fill="#2E66E6"/>
                         </svg>
                     </h3>
                     <h4 className='inventory-details__items'>CATEGORY:</h4>
-                    <p className='inventory-details__click-item-value'>Electronics</p>
+                    <p className='inventory-details__click-item-value'>Gear</p>
                 </div>
 
                 <div className='inventory-details__right'>
                     <h4 className='inventory-details__items'>STATUS:</h4>
                     <h3 className='inventory-details__status--red'> OUT OF STOCK</h3>
                     <h4 className='inventory-details__items'>QTY:</h4>
-                    <p className='inventory-details__quantity-value'>500</p>
+                    <p className='inventory-details__quantity-value'>0</p>
                 </div>
             </section>
            
