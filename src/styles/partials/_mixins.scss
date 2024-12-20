@@ -28,8 +28,8 @@
 }
 
 @mixin logo{
-    width: 120px;
-    height: 20px;
+    width: 8.037rem;
+    height: 1.75rem;
 }
 
 @mixin flex-center ($direction){
@@ -39,7 +39,4 @@
 @mixin reset-list{
     list-style: none;
     margin: 0;
-    padding: 1rem;
-    
-  
 }
