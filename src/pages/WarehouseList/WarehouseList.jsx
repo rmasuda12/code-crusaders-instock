@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./WarehouseList.scss";
 import TrashBin from "../../assets/Icons/delete_outline-24px.svg";
 import EditButton from "../../assets/Icons/edit-24px.svg";
+import ChevronRight from "../../assets/Icons/chevron_right-24px.svg";
 import axios from "axios";
 
 
@@ -25,10 +26,6 @@ function WarehouseList({ onWarehouseClick }) {
   )
 
 
-
-
-
-
   return (
     <div className="warehouses">
       <header className="warehouses__header">
@@ -48,10 +45,38 @@ function WarehouseList({ onWarehouseClick }) {
       <table className="warehouses__table">
         <thead>
           <tr>
-            <th>Warehouse</th>
-            <th>Address</th>
-            <th>Contact Name</th>
-            <th>Contact Information</th>
+            <th onClick={() => getWarehouses("warehouse_name", true)}>
+              Warehouse
+              <img
+                className="warehouses__icon"
+                src={ChevronRight}
+                alt="Sort"
+              />
+            </th>
+            <th onClick={() => getWarehouses("address", true)}>
+              Address
+              <img
+                className="warehouses__icon"
+                src={ChevronRight}
+                alt="Sort"
+              />
+            </th>
+            <th onClick={() => getWarehouses("contact_name", true)}>
+              Contact Name
+              <img
+                className="warehouses__icon"
+                src={ChevronRight}
+                alt="Sort"
+              />
+            </th>
+            <th onClick={() => getWarehouses("contact_phone", true)}>
+              Contact Info
+              <img
+                className="warehouses__icon"
+                src={ChevronRight}
+                alt="Sort"
+              />
+            </th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -62,7 +87,7 @@ function WarehouseList({ onWarehouseClick }) {
               className="warehouses__row"
               onClick={() => onWarehouseClick(warehouse.id)}
             >
-              <td>{warehouse.name}</td>
+              <td>{warehouse.warehouse_name}</td>
               <td>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</td>
               <td>{warehouse.contact_name}</td>
               <td>
