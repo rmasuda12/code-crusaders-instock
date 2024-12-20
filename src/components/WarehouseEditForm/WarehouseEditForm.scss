@@ -1,20 +1,20 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-// .wh-edit__details {
-//   padding: 1rem;
-//   @include tablet {
-//     padding: 2rem;
-//     display: flex;
-//     justify-content: space-between;
-//   }
-// }
-
 .wh-edit__form {
+  background-color: $light-grey;
   @include tablet {
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+.test {
+  background-color: $white;
+  @include tablet {
+    display: flex;
   }
 }
 .wh-edit__form-container {
@@ -23,6 +23,7 @@
   border-bottom: 1px solid $cloud;
   padding: 1rem 1rem;
   @include tablet {
+    border-bottom: none;
     width: 50%;
   }
 }
@@ -42,16 +43,19 @@
   padding: 1rem;
   border-radius: 1.25rem;
   border: 1px solid $cloud;
+  color: $cloud;
   @include tablet {
     height: 2.375rem;
   }
   &:focus {
+    color: $instock-black;
     border: 1px solid $instock-indigo;
     outline: none;
   }
 }
 
 .wh-edit__cta {
+  background-color: $light-grey;
   display: flex;
   align-items: center;
   //   padding: 1rem;
