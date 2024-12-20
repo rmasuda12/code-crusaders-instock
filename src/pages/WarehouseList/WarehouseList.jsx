@@ -4,6 +4,7 @@ import TrashBin from "../../assets/Icons/delete_outline-24px.svg";
 import EditButton from "../../assets/Icons/edit-24px.svg";
 import ChevronRight from "../../assets/Icons/chevron_right-24px.svg";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -81,13 +82,17 @@ function WarehouseList({ onWarehouseClick }) {
           </tr>
         </thead>
         <tbody>
+
+
+
           {warehouses.map((warehouse) => (
             <tr
               key={warehouse.id}
-              className="warehouses__row"
-              onClick={() => onWarehouseClick(warehouse.id)}
-            >
-              <td>{warehouse.warehouse_name}</td>
+              className="warehouses__row">
+              <td><Link className="warehouses__link" to={`/warehouses/${warehouse.id}`}>
+
+                {warehouse.warehouse_name} </Link>
+              </td>
               <td>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</td>
               <td>{warehouse.contact_name}</td>
               <td>

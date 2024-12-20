@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import WarehouseList from "./pages/WarehouseList/WarehouseList.jsx";
 import InventoryList from "./pages/InventoryList/InventoryList.jsx";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,15 +23,16 @@ function App() {
         <Route path="/warehouse" element={<Warehouse />} />
         <Route path="/warehouseadd" element={<WarehouseAdd />} />
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-        <Route path="/warehouseedit" element={<WarehouseEdit />} />
+        <Route path="/warehouseedit/:id" element={<WarehouseEdit />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/inventoryadd" element={<InventoryAdd />} />
         <Route path="/inventories/:id" element={<InventoryDetails />} />
         <Route path="/inventoryedit" element={<InventoryEdit />} />
         <Route path="/warehouses" element={<WarehouseList />} />
         <Route path="/inventories" element={<InventoryList />} />
-
       </Routes>
+
+     
 
       <Footer />
     </BrowserRouter>

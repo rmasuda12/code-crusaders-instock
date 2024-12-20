@@ -1,29 +1,36 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.wh-edit__details {
-  padding: 1rem;
+.wh-edit__form {
+  background-color: $light-grey;
   @include tablet {
-    padding: 2rem;
     display: flex;
+    flex-direction: column;
+    width: 100%;
     justify-content: space-between;
   }
 }
 
-.wh-edit__form {
+.test {
+  background-color: $white;
   @include tablet {
-    width: 45%;
+    display: flex;
+  }
+}
+.wh-edit__form-container {
+  width: 100%;
+  @include flex-center(column);
+  border-bottom: 1px solid $cloud;
+  padding: 1rem 1rem;
+  @include tablet {
+    border-bottom: none;
+    width: 50%;
   }
 }
 
 .wh-edit__details-header {
   padding: 1rem 0;
   color: $instock-black;
-}
-.wh-edit__form-container {
-  @include flex-center(column);
-  border-bottom: 1px solid $cloud;
-  padding: 1rem 0;
 }
 
 .wh-edit__form-label {
@@ -36,15 +43,19 @@
   padding: 1rem;
   border-radius: 1.25rem;
   border: 1px solid $cloud;
+  color: $cloud;
   @include tablet {
     height: 2.375rem;
   }
-  &:active {
+  &:focus {
+    color: $instock-black;
     border: 1px solid $instock-indigo;
+    outline: none;
   }
 }
 
 .wh-edit__cta {
+  background-color: $light-grey;
   display: flex;
   align-items: center;
   //   padding: 1rem;
