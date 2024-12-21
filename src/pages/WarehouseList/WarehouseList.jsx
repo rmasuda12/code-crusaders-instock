@@ -29,7 +29,7 @@ function WarehouseList({ onWarehouseClick }) {
       setWarehouses(response.data)
     }
     fetchWarehouses();
-  }, []
+  }, [isModalOpen]
   )
 
 

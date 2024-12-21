@@ -13,7 +13,7 @@ function InventoryDetails () {
     async function getInventoryDetails() {
         try {
             const response = await axios.get(`http://localhost:8080/inventories/${params.id}`);
-            setInventoryDetails(response.data[0]);
+            setInventoryDetails(response.data);
         } catch (error) {
             console.log("Error: get inventories function failed")
         }
