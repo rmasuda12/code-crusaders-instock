@@ -20,9 +20,7 @@
        justify-content: space-between;
        padding-top: 1rem;
        padding-bottom: 1rem;
-
      }
-    
     
     &__frame{
       @include flex-center(column);
@@ -47,15 +45,10 @@
             border: 1px solid $instock-indigo;
         }
 
-        // &::after{
-        //     border: 1px solid $slate;
-        // }
-
     }
 }
 
 .itemAvail__list{
-    width: 8rem;
     list-style: none;
     @include flex-center(row);
     justify-content: flex-start;

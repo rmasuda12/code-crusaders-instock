@@ -11,7 +11,6 @@ function InventoryEdit(props){
 
     function handleFormSave(formData){
         console.log('Save button clicked:', formData);
-
     }
 
     function handleCancel(e){
