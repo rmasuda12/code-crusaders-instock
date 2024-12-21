@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./NotFound.scss";
 
 function NotFound() {
+    const baseURL = import.meta.env.VITE_API_URL;
     return(
         <>
     <div className='page-container'>
@@ -25,7 +26,7 @@ function NotFound() {
         <section className='notfound__container'>
         <section className='notfound__description'>
             <p className='notfound__subtitle'>The suggested URL was not found on this server... but in the meantime, enjoy this doggo.</p>
-            <img className="notfound__gif" src={"./src/assets/Gifs/dog.gif"}/>
+            <img className="notfound__gif" src={`${baseURL}/dog.gif`}/>
         </section>
         </section>
         </section>
