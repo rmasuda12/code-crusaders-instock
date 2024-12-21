@@ -1,14 +1,21 @@
 import "./DeleteWarehouse.scss";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+
 
 function Delete(prop) {
+    const baseURL = import.meta.env.VITE_API_URL
     function closeModal() {
         prop.setIsModalOpen(false);
     }
 
     async function deleteWarehouse() {
-        const deleted = await axios.delete(url);
-        prop.setIsModalOpen(false);
+        try {
+            const deleted = await axios.delete(`${baseURL}/warehouses/${prop.warehouseInfo.id}`);
+            prop.setIsModalOpen(false); 
+        } catch (error) {
+            console.log("error: warehouse could not be deleted")
+        }
     }
     return (
         <>
@@ -17,8 +24,8 @@ function Delete(prop) {
                 <div className="modal__header">
                     <img className="modal__closer" src="src/assets/icons/close-24px.svg" onClick={closeModal}/>
                 </div>
-                <h1 className="modal__title">Delete LOCATION warehouse?</h1>
-                <p className="modal__text p1">Please confirm that you'd like to delete the LOCATION from the list of warehouses. You won't be able to undo this action.</p>
+                <h1 className="modal__title">Delete {prop.warehouseInfo.warehouse_name} warehouse?</h1>
+                <p className="modal__text p1">Please confirm that you'd like to delete the {prop.warehouseInfo.warehouse_name} from the list of warehouses. You won't be able to undo this action.</p>
                 <div className="modal__container">
                     <button className="modal__button modal__button--cancel" onClick={closeModal}>Cancel</button>
                     <button className="modal__button modal__button--delete" onClick={deleteWarehouse}>Delete</button>                    
