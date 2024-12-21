@@ -3,19 +3,20 @@
 
 .inventory-details {
     padding: 0 1.5rem;
-    border-bottom: 1px solid $cloud;
     background-color: $white;
 
     @include tablet{
         display: flex;
+        flex-direction: column;
         padding: 0;
-        padding-left: 1.5rem;
     }
 
     &__container {
-        display: flex;
+        
         justify-content: space-between;
         padding-bottom: 1.5rem;
+        border-bottom: 1px solid $cloud;
+        
     
             @include tablet {
                 justify-content: space-between;
@@ -23,7 +24,7 @@
                 padding: 1rem 0;
                 flex-basis: auto;
                 width: 100%;
-                
+                display: flex;
             }
     }
 
@@ -33,13 +34,6 @@
             flex-basis: 1;
 
             @include tablet {
-                // display: none;
-                // flex-grow: 1;
-                // flex-basis: auto;
-                // justify-content: space-between;
-                // display: flex;
-                //     align-items: center;
-                //     flex-grow: 1;
                 }
 
         }
@@ -51,8 +45,6 @@
             @include tablet {
                 display: flex;
                 flex-grow: 1;
-                // flex-basis: auto;
-                // justify-content: space-between;
             }
         }
     
@@ -62,22 +54,21 @@
         color: $instock-indigo;
 
         @include tablet {
-            // flex-grow: 1;
-            
-                // flex-grow: 1;
+            padding-left: 1.5rem;
         }
     }
 
     &__click-item-value {
         @include tablet {
-            // flex-grow: 1;
-            // flex-basis: 1;
         }
     }
 
     &__items {
         color: $slate;
         padding-top: 1.5rem;
+        width: 50%;
+        
+        
 
         @include tablet {
             display: none;
@@ -100,19 +91,26 @@
 
 
     &__status {
-        color: $green;
-        background-color: #D0F0C0;
         border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0.40rem;
-        width: 5rem;
+        width: 6rem;
+        text-transform: uppercase;
+
+        &.in-stock {
+            color: $green;
+            background-color: #D0F0C0;
+        }
+
+        &.out-of-stock {
+            color: $red;
+            background-color: #FBCEB1;
+        }
 
         @include tablet {
             width: 7rem;
-            // flex-grow: 1;
-            // flex-basis: 0;
             
         }
     }
@@ -121,8 +119,6 @@
 
         @include tablet {
             display: flex;
-            // flex-grow: 1;
-            // flex-basis: 1;
         }
     }
 
@@ -137,10 +133,6 @@
 
         @include tablet {
             width: 7rem;
-            // flex-grow: 1;
-            // flex-basis: 0;
-            
-            // justify-content: center;
         }
     }
 
@@ -164,18 +156,20 @@
     &__hidden-icon {
         display: flex;
         align-items: center;
-        // flex-grow: 1;
         flex: 25%;
     }
 
     &__hidden-icon--status {
         display: flex;
         align-items: center;
-        // flex-grow: 1;
         flex: 25%;
     }
 
     .column {
     width: 25%;
     }
+
+
+
 }
+

@@ -1,7 +1,21 @@
 import './WarehouseInventoryItems.scss'
+import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function WarehouseInventoryItems () {
+function WarehouseInventoryItems ({warehouseId}) {
 
+    const [inventoryDetails, setInventoryDetails] = useState([]);
+
+    async function getWarehouseInventory() {
+        const response = await axios.get(`http://localhost:8080/warehouses/${warehouseId}/inventories`);
+            setInventoryDetails(response.data);
+    }
+
+    useEffect(() => {
+        getWarehouseInventory();
+    }, [warehouseId]);
+   
    
 
 
@@ -35,27 +49,28 @@ function WarehouseInventoryItems () {
                 </h4>
                 <h4>ACTIONS</h4>
             </section>
-        <section className='inventory-details'>
-            {/* <section className='inventory-details__container'> */}
-                {/* <div className='inventory-details__left'> */}
+        
+            <div>
+        <section className='inventory-details'>        
+            {inventoryDetails.map((item) => (
+            <section key={item.id} className="inventory-details__container">
                     <h4 className='inventory-details__items'>INVENTORY ITEM:</h4>
-                    <h3 className='inventory-details__click-item column'>Television 
+                    <h3 className='inventory-details__click-item column'>{item.item_name} 
                         <svg className='inventory-details__chevron' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z" fill="#2E66E6"/>
                         </svg>
                     </h3>
                     <h4 className='inventory-details__items'>CATEGORY:</h4>
-                    <p className='inventory-details__click-item-value column'>Electronics</p>
-                {/* </div> */}
-                {/* <div className='inventory-details__right'> */}
-                    <h4 className='inventory-details__items'>STATUS:</h4>
-                    <div className='column'><h3 className='inventory-details__status'>IN STOCK</h3></div>
-                    
-                    <h4 className='inventory-details__items'>QTY:</h4>
-                    <p className='inventory-details__quantity-value column'>500</p>
-                {/* </div> */}
+                    <p className='inventory-details__click-item-value column'>{item.category}</p>
 
-            {/* </section> */}
+
+                    <h4 className='inventory-details__items'>STATUS:</h4>
+                    <div className='column'>
+                        <h3 className={`inventory-details__status ${item.status === 'In Stock' ? 'in-stock' : 'out-of-stock'}`}>
+                            {item.status}</h3>
+                    </div>
+                    <h4 className='inventory-details__items'>QTY:</h4>
+                    <p className='inventory-details__quantity-value column'>{item.quantity}</p>
            
             <section className='inventory-details__icons'>
                 <p className='inventory-details__delete'>
@@ -69,50 +84,16 @@ function WarehouseInventoryItems () {
                     </svg>
                 </p>
             </section>
-        </section>
-
-{/* TEST */}
-        <section className='inventory-details'>
-
-            <section className='inventory-details__container'>
-
-                <div className='inventory-details__left'>
-                    <h4 className='inventory-details__items'>INVENTORY ITEM:</h4>
-                    <h3 className='inventory-details__click-item'>Gym Bag 
-                        <svg className='inventory-details__chevron' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z" fill="#2E66E6"/>
-                        </svg>
-                    </h3>
-                    <h4 className='inventory-details__items'>CATEGORY:</h4>
-                    <p className='inventory-details__click-item-value'>Gear</p>
-                </div>
-
-                <div className='inventory-details__right'>
-                    <h4 className='inventory-details__items'>STATUS:</h4>
-                    <h3 className='inventory-details__status--red'> OUT OF STOCK</h3>
-                    <h4 className='inventory-details__items'>QTY:</h4>
-                    <p className='inventory-details__quantity-value'>0</p>
-                </div>
             </section>
-           
-            <section className='inventory-details__icons'>
-                <p className='inventory-details__delete'>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" fill="#C94515"/>
-                    </svg>
-                </p>
-                <p className='inventory-details__edit'>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C21.1 6.65 21.1 6.02 20.71 5.63L18.37 3.29C17.98 2.9 17.35 2.9 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04V7.04Z" fill="#2E66E6"/>
-                    </svg>
-                </p>
-            </section>
+            ))}
+           </section> 
+           </div> 
+        
 
-        </section>  
-           
+
         </>
     );
-
 }
+
 
 export default WarehouseInventoryItems;
