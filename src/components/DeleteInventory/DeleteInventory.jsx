@@ -1,6 +1,5 @@
 import "./DeleteInventory.scss"
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 
 function DeleteInventory(prop) {
@@ -24,7 +23,7 @@ function DeleteInventory(prop) {
         <div className="modal__background">
             <div className="modal__content">
                 <div className="modal__header">
-                    <img className="modal__closer" src="src/assets/icons/close-24px.svg" onClick={closeModal}/>
+                    <img className="modal__closer" src={`${baseURL}/close-24px.svg`} onClick={closeModal}/>
                 </div>
                 <h1 className="modal__title">Delete {prop.inventoryInfo.item_name} inventory item?</h1>
                 <p className="modal__text p1">Please confirm that you'd like to delete {prop.inventoryInfo.item_name} from the inventory list. You won't be able to undo this action.</p>
