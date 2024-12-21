@@ -5,15 +5,21 @@ import EditButton from "../../assets/Icons/edit-24px.svg";
 import ChevronRight from "../../assets/Icons/chevron_right-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
-
-
+import DeleteWarehouse from '../../components/DeleteWarehouse/DeleteWarehouse.jsx';
 
 function WarehouseList({ onWarehouseClick }) {
   //create a state variable called warehouses
-
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [warehouses, setWarehouses] = useState([]);
+  const [warehouseInfo, setWarehouseInfo] = useState({});
 
+  function trashClickHander() {
+    setIsModalOpen(true);
+  }
+  function trashIdHandler(warehouse) {
+    setWarehouseInfo(warehouse)
+  }
+  console.log("warehouseinfo",warehouseInfo)
 
   useEffect(() => {
     const fetchWarehouses = async () => {
@@ -28,6 +34,8 @@ function WarehouseList({ onWarehouseClick }) {
 
 
   return (
+    <>
+    {isModalOpen? <DeleteWarehouse setIsModalOpen={setIsModalOpen} warehouseInfo={warehouseInfo}/> : ""}
     <div className="warehouses">
       <header className="warehouses__header">
         <h1 className="warehouses__title">Warehouses</h1>
@@ -35,7 +43,7 @@ function WarehouseList({ onWarehouseClick }) {
           <input
             type="text"
             className="warehouses__search"
-            placeholder="Search..." run
+            placeholder="Search..."
             disabled
           />
           <button className="warehouses__add-button">
@@ -105,6 +113,7 @@ function WarehouseList({ onWarehouseClick }) {
                   className="warehouse__icon"
                   src={TrashBin}
                   alt="Delete Warehouse"
+                  onClick={()=>{ trashClickHander(); trashIdHandler(warehouse);}}
                 />
                 <img
                   className="warehouse__icon"
@@ -117,6 +126,7 @@ function WarehouseList({ onWarehouseClick }) {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
 
