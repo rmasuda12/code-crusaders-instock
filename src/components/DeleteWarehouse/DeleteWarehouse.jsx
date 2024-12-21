@@ -13,9 +13,8 @@ function Delete(prop) {
         try {
             const deleted = await axios.delete(`${baseURL}/warehouses/${prop.warehouseInfo.id}`);
             prop.setIsModalOpen(false); 
-            console.log("code is still running after set Is modal opden")
         } catch (error) {
-            console.log("deleted function failed")
+            console.log("error: warehouse could not be deleted")
         }
     }
     return (

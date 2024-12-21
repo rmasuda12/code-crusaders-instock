@@ -5,11 +5,21 @@ import EditButton from "../../assets/Icons/edit-24px.svg";
 
 import SortButton from "../../assets/icons/sort-24px.svg";
 import axios from "axios";
+import DeleteInventory from "../../components/DeleteInventory/DeleteInventory.jsx";
 
 axios.defaults.baseURL = "http://localhost:8080/inventories";
 
 function InventoryList({ onInventoryClick }) {
     const [inventories, setInventories] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [inventoryInfo, setInventoryInfo] = useState({});
+  
+    function trashClickHander() {
+      setIsModalOpen(true);
+    }
+    function trashIdHandler(inventory) {
+      setInventoryInfo(inventory)
+    }
 
     useEffect(() => {
         const fetchInventories = async () => {
@@ -19,10 +29,12 @@ function InventoryList({ onInventoryClick }) {
             setInventories(response.data)
         }
         fetchInventories();
-    }, []
+    }, [isModalOpen]
     )
 
     return (
+        <>
+        {isModalOpen ? <DeleteInventory setIsModalOpen={setIsModalOpen} inventoryInfo={inventoryInfo}/>: ""}
         <div className="inventories">
             <header className="inventories__header">
                 <h1 className="inventories__title">Inventory</h1>
@@ -77,7 +89,7 @@ function InventoryList({ onInventoryClick }) {
                             <td>{inventory.quantity}</td>
                             <td>{inventory.warehouse_id}</td>
                             <td>
-                                <img className="inventory__icon" src={TrashBin} alt="Delete Inventory" />
+                                <img className="inventory__icon" src={TrashBin} alt="Delete Inventory" onClick={()=>{trashClickHander();trashIdHandler(inventory);}}/>
                                 <img className="inventory__icon" src={EditButton} alt="Edit Inventory" />
                             </td>
                         </tr>
@@ -85,6 +97,7 @@ function InventoryList({ onInventoryClick }) {
                 </tbody>
             </table>
         </div>
+        </>
     );
 }
 

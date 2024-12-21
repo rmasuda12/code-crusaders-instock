@@ -19,7 +19,6 @@ function WarehouseList({ onWarehouseClick }) {
   function trashIdHandler(warehouse) {
     setWarehouseInfo(warehouse)
   }
-  console.log("warehouseinfo",warehouseInfo)
 
   useEffect(() => {
     const fetchWarehouses = async () => {

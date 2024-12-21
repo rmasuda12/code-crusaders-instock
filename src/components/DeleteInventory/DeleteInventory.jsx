@@ -5,17 +5,19 @@ import { useParams } from "react-router-dom";
 
 function Delete(prop) {
     const baseURL = import.meta.env.VITE_API_URL;
-    const params = useParams();
 
     function closeModal() {
         prop.setIsModalOpen(false);
     }
 
-    async function deleteWarehouse() {
-        let params = useParams();
-        console.log(params);
-        const deleted = await axios.delete(`${baseURL}/inventories/${params.id}`);
-        prop.setIsModalOpen(false);
+    async function deleteInventory() {
+        try {
+            const deleted = await axios.delete(`${baseURL}/inventories/${prop.inventoryInfo.id}`);
+            prop.setIsModalOpen(false);        
+        } catch (error) {
+            console.log("error: inventory item could not be deleted")
+        }
+
     }
     return (
         <>
@@ -28,7 +30,7 @@ function Delete(prop) {
                 <p className="modal__text p1">Please confirm that you'd like to delete item from the list of warehouses. You won't be able to undo this action.</p>
                 <div className="modal__container">
                     <button className="modal__button modal__button--cancel" onClick={closeModal}>Cancel</button>
-                    <button className="modal__button modal__button--delete" onClick={deleteWarehouse}>Delete</button>                    
+                    <button className="modal__button modal__button--delete" onClick={deleteInventory}>Delete</button>                    
                 </div>
             </div>
         </div>
