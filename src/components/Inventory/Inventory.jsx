@@ -51,13 +51,19 @@ function Inventory ({warehouseId}) {
                     <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" fill="#5C667E"/>
                     </svg>
                 </h4>
+                 <h4 className='inventory-details__hidden-icon'>
+                    WAREHOUSE
+                    <svg width="24" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" fill="#5C667E"/>
+                    </svg>
+                </h4>
                 <h4>ACTIONS</h4>
             </section>
         
             
         <section className='inventory-details'>   
             {inventoryDetails.map((item) => (
-            <section key={item.id} className="inventory-details__container">
+            <section key={item.id} className="inventory-details__container-i">
                     <h4 className='inventory-details__items'>INVENTORY ITEM:</h4>
                     <NavLink to={`/inventories/${item.id}`} className='column'>
                         <h3 className='inventory-details__click-item '>{item.item_name} 
@@ -67,7 +73,7 @@ function Inventory ({warehouseId}) {
                         </h3>
                     </NavLink>
                     <h4 className='inventory-details__items'>CATEGORY:</h4>
-                    <p className='inventory-details__click-item-value column'>{item.category}</p>
+                    <p className='inventory-details__click-item-value-i column'>{item.category}</p>
 
 
                     <h4 className='inventory-details__items'>STATUS:</h4>
@@ -77,6 +83,8 @@ function Inventory ({warehouseId}) {
                     </div>
                     <h4 className='inventory-details__items'>QTY:</h4>
                     <p className='inventory-details__quantity-value column'>{item.quantity}</p>
+                    <h4 className='inventory-details__items'>WAREHOUSE:</h4>
+                    <p className='inventory-details__quantity-value column'>{item.warehouse_name}</p>
            
             <section className='inventory-details__icons'>
                 <button onClick={() => openModal()}>

@@ -1,0 +1,26 @@
+  @use '../../styles/partials/variables' as *;
+  @use '../../styles/partials/mixins' as *;
+  
+  
+  .inventory-details {
+
+        &__container-i {
+
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid $cloud;
+            column-count: 2;
+
+
+            @include tablet {
+                justify-content: space-between;
+                padding-bottom: 0;
+                padding: 1rem 0;
+                flex-basis: auto;
+                width: 100%;
+                display: flex;
+            }
+
+            }
+
+  }
