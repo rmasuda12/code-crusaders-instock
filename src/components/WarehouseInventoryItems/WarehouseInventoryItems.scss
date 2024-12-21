@@ -14,8 +14,9 @@
     &__container {
         
         justify-content: space-between;
-        padding-bottom: 1.5rem;
+        padding: 1.5rem 0;
         border-bottom: 1px solid $cloud;
+        column-count: 2;
         
     
             @include tablet {
@@ -59,7 +60,9 @@
     }
 
     &__click-item-value {
+        padding-bottom: 2rem;
         @include tablet {
+            padding-bottom: 0;
         }
     }
 
@@ -82,12 +85,11 @@
 
         @include tablet {
             padding-right: 1.5rem;
-            
+            display: flex;
             padding-bottom: 0;
             align-items: center;
         }
     }
-
 
 
     &__status {
@@ -119,20 +121,6 @@
 
         @include tablet {
             display: flex;
-        }
-    }
-
-    &__status--red {
-        color: $red;
-        background-color: #FBCEB1;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        padding: 0.40rem;
-        width: 6rem;
-
-        @include tablet {
-            width: 7rem;
         }
     }
 
@@ -169,7 +157,9 @@
     width: 25%;
     }
 
-
+    a {
+        text-decoration: none;
+    }
 
 }
 
