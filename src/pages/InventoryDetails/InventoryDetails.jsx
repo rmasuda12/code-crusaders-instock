@@ -1,11 +1,12 @@
 import './InventoryDetails.scss';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function InventoryDetails () {
 
     const params = useParams();
+    const navigate = useNavigate();
     const [InventoryDetails, setInventoryDetails] = useState({});
 
 // Get warehouse details from the API based on id
@@ -13,9 +14,11 @@ function InventoryDetails () {
     async function getInventoryDetails() {
         try {
             const response = await axios.get(`http://localhost:8080/inventories/${params.id}`);
+            console.log(response)
             setInventoryDetails(response.data);
         } catch (error) {
-            console.log("Error: get inventories function failed")
+            console.log(`Error: api call was not able to retrieve desired inventory item with id:${params.id}`);
+            navigate("notfound", { replace: true });
         }
     }
     
