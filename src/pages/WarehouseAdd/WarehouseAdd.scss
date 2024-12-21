@@ -17,7 +17,8 @@
   .wh-edit__card {
     @include flex-center(column);
     width: 100%;
-    border-radius: 3px;
+    border-radius: 4px;
+    box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
     background-color: $white;
 
     .warehouse-edit__header-link {
