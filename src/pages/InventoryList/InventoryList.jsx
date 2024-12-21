@@ -6,6 +6,7 @@ import EditButton from "../../assets/Icons/edit-24px.svg";
 import SortButton from "../../assets/icons/sort-24px.svg";
 import axios from "axios";
 import DeleteInventory from "../../components/DeleteInventory/DeleteInventory.jsx";
+import Inventory from "../../components/Inventory/Inventory.jsx";
 
 axios.defaults.baseURL = "http://localhost:8080/inventories";
 
@@ -50,7 +51,7 @@ function InventoryList({ onInventoryClick }) {
                     </button>
                 </div>
             </header>
-            <table className="inventories__table">
+            {/* <table className="inventories__table">
                 <thead>
                     <tr>
                         <th>
@@ -95,8 +96,10 @@ function InventoryList({ onInventoryClick }) {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table> */}
         </div>
+
+        <Inventory />
         </>
     );
 }

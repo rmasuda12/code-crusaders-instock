@@ -1,15 +1,18 @@
-import './WarehouseInventoryItems.scss'
+import './inventory.scss';
+
+
+import './Inventory.scss'
 import { Link, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DeleteInventory from '../DeleteInventory/DeleteInventory';
 
-function WarehouseInventoryItems ({warehouseId}) {
+function Inventory ({warehouseId}) {
 
     const [inventoryDetails, setInventoryDetails] = useState([]);
 
     async function getWarehouseInventory() {
-        const response = await axios.get(`http://localhost:8080/warehouses/${warehouseId}/inventories`);
+        const response = await axios.get(`http://localhost:8080/inventories`);
             setInventoryDetails(response.data);
     }
 
@@ -109,4 +112,4 @@ function WarehouseInventoryItems ({warehouseId}) {
 }
 
 
-export default WarehouseInventoryItems;
+export default Inventory;
