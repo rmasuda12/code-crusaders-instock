@@ -16,7 +16,7 @@
     
 }
 
-.item {
+.notfound {
     border-radius: 4px;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
     background-color: $white;
@@ -29,11 +29,6 @@
         display: flex;
         flex-direction: row;
         padding: 1.5rem;
-        align-items: center;
-    }
-
-    &__arrow {
-        display: flex;
         align-items: center;
     }
 
@@ -76,10 +71,10 @@
     }
     &__text {
         padding-top: 0.25rem;
-        padding-bottom: 1rem;
+        padding-bottom: 10rem;
         &--mod {
             padding-top: 0.25rem;
-            padding-bottom: 1rem;
+            padding-bottom: 10rem;
             @include tablet {
                 padding-bottom: 2.25rem;
             }
@@ -101,13 +96,13 @@
 
         @include tablet {
             display: flex;
-            border-bottom: none;
         }
 
     }
 
     &__subtitle {
         color: $slate;
+        padding-bottom: 1rem;
     }
 
     &__extra-info{
