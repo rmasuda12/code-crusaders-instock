@@ -5,17 +5,16 @@ import { useNavigate,useParams } from 'react-router-dom';
 
 
 
-function InventoryEdit(props){
+function InventoryEdit(){
    const navigate = useNavigate();
     
 
-    function handleFormSave(formData){
-        console.log('Save button clicked:', formData);
+    function handleFormSave(e){
+      e.preventDefault();
     }
 
     function handleCancel(e){
       e.preventDefault();
-      console.log('cancel button clicked'); /// clear this
       navigate('/inventorydetails');
 
   }

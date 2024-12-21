@@ -101,10 +101,12 @@ function InventoryEditForm({handleFormSave}){
 
         <div className='itemDetails__box'>
        
-         <h2 className='itemDetails__title-h2'>Item Details</h2>
-  
+        
            <form  onSubmit={ onSubmit} className='itemDetails__form-wrap'>
+               {/* <div></div> */}
               <div className='itemDetails__form'>
+                   <h2 className='itemDetails__title-h2'>Item Details</h2>
+  
                    <label  className='itemDetails__label-h3' htmlFor="name">Item Name</label>
                    <input  className='itemDetails__input' 
                    onChange={handleInputChange}
