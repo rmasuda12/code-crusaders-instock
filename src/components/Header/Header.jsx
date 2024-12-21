@@ -28,11 +28,11 @@ function Header(){
 
                 <ul className='header-nav__list'>
                     
-                    <Link className='header-nav__link' to='/warehouse'>
+                    <Link className='header-nav__link' to='/'>
                     <li className='header-nav__item-h3'>Warehouses</li>
                     </Link>
                     
-                    <Link className='header-nav__link'  to='/inventory'>
+                    <Link className='header-nav__link'  to='/inventories'>
                     <li className='header-nav__item-h3'>Inventory</li>
                     </Link>
                    
