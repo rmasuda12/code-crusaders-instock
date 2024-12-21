@@ -1,15 +1,25 @@
 import "./DeleteWarehouse.scss";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+
 
 function Delete(prop) {
-    console.log("this is warehouse name", prop.warehouseInfo.warehouse_name)
+    const baseURL = import.meta.env.VITE_API_URL
+    const params = useParams();
     function closeModal() {
         prop.setIsModalOpen(false);
     }
 
     async function deleteWarehouse() {
-        const deleted = await axios.delete(url);
-        prop.setIsModalOpen(false);
+        try {
+            console.log("delete was attempted")
+            const deleted = await axios.delete(`${baseURL}/warehouses/${params.id}`);
+            console.log("delete api call ran succesffully")
+            prop.setIsModalOpen(false);  
+            console.log("code is still running after set Is modal open")
+        } catch (error) {
+            console.log("deleted function failed")
+        }
     }
     return (
         <>
