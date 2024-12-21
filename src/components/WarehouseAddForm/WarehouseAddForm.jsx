@@ -8,14 +8,14 @@ function WarehouseAddForm() {
   const params = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    warehouseName: "",
-    streetAddress: "",
+    warehouse_name: "",
+    address: "",
     city: "",
     country: "",
-    contactName: "",
-    position: "",
-    phoneNumber: "",
-    email: "",
+    contact_name: "",
+    contact_position: "",
+    contact_phone: "",
+    contact_email: "",
   });
 
   const handleChangeForm = (event) => {
@@ -54,8 +54,8 @@ function WarehouseAddForm() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/warehouses/${params.id}`,
-        dataToSend
+        `http://localhost:8080/warehouses`,
+        formData
       );
       console.log("Warehouse updated successfully:", response);
     } catch (error) {
