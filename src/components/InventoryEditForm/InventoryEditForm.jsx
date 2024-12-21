@@ -5,59 +5,94 @@ import { useParams} from 'react-router-dom';
 import StockQuantity from '../StockQuantity/StockQuantity.jsx';
 
 
+
 function InventoryEditForm({handleFormSave}){
       const [openQuantity, setOpenQuantity] = useState(false);
       const [isChecked, setIsChecked] = useState(false);
-      const [editInventory, setEditInventory] = useState([[]]);
+      const [inventories, setInventories] = useState([]);
+      const [warehouses, setWarehouses] = useState([]);
+      const params = useParams();
+       console.log('Params:', params);
       
 
-      const [formValues, setFormValues] = useState({name:'', description:''});
+      const [formValues, setFormValues] = useState({
+        warehouse_id:'',
+        item_name:'',
+        description:'',
+        category:'',
+        status:'',
+        quantity:'',
+      
+      });
+      console.log('formvalues:', formValues);
 
-
-     
-       const params = useParams();
-       console.log('Params:', params);
-
-      // 
+      function handleInputChange(event){
+        const {name, value} = event.target;
+        setFormValues((prevData) =>({
+            ...prevData,
+            [name]: value,
+        }));
+      };
+ 
       /////get inventories
           useEffect(() =>{
-            async function getInventory() {
+            async function getinventories() {
               try{
-                const response = await axios.get(`http://localhost:8080/inventories/${params.id}`);
+                const response = await axios.get('http://localhost:8080/inventories/');
                 console.log(response.data);
-                setEditInventory(response.data);
+                setInventories(response.data);
               } catch (error){
                 console.error('error getting inventory Item:', error)
               }
               
             }
-            getInventory();
+            getinventories();
       
+          }, []);
+
+         /////get warehouses
+          useEffect(() =>{
+            async function getwarehouses() {
+              try{
+                const response = await axios.get('http://localhost:8080/warehouses/');
+                console.log(response.data);
+                setWarehouses(response.data);
+              } catch (error){
+                console.error('error getting warehouses:', error)
+              }
+              
+            }
+            getwarehouses();
+      
+          }, []);
+
+           /////get InventoryItem
+
+          useEffect(() => {
+            async function getInventoryItemData() {
+              try {
+                const response = await axios.get(
+                  `http://localhost:8080/inventories/${params.id}`
+                );
+                console.log("response:", response.data);
+                setFormValues(response.data);
+              } catch (error) {
+                console.log(error);
+              }
+            }
+            getInventoryItemData();
           }, [params.id]);
-        
+
 
       function handleQuantityClick (){
         setOpenQuantity(!openQuantity);
         setIsChecked(!isChecked);
         
-       
       }
-
-      function handleInputChange(event){
-
-        const {name, value} = event.target;
-
-        setFormValues({
-            ...formValues,
-            [name]: value,
-        })
-      }
-
+     
       function onSubmit(event){
         event.preventDefault();
         handleFormSave(formValues);
-
-        setFormValues({name:'', description:''});
     }
 
 
@@ -69,15 +104,13 @@ function InventoryEditForm({handleFormSave}){
          <h2 className='itemDetails__title-h2'>Item Details</h2>
   
            <form  onSubmit={ onSubmit} className='itemDetails__form-wrap'>
-             
-
               <div className='itemDetails__form'>
                    <label  className='itemDetails__label-h3' htmlFor="name">Item Name</label>
                    <input  className='itemDetails__input' 
                    onChange={handleInputChange}
                    name='name'
                    type="text" 
-                   value ={formValues.name}/>
+                   value ={formValues. item_name}/>
   
                    <label className='itemDetails__label-h3' htmlFor="name">Description</label>
                    <textarea className='itemDetails__text' 
@@ -87,12 +120,16 @@ function InventoryEditForm({handleFormSave}){
                    value={formValues.description}>
                    </textarea>
                    <label className='itemDetails__label-h3' htmlFor="name">Category</label>
-                   <div  className='itemDetails__dropdown'>
-                       <p>Electronics</p>
-                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                       <path d="M7 10L12 15L17 10H7Z" fill="#5C667E"/>
-                       </svg>      
-                   </div>
+
+                   <select className="itemAvail__dropdown">
+                        {/*category dropdown */}
+                       {inventories.map((inventory) => (
+                           <option key={inventory.id} value={inventory.id}>
+                               {inventory.category}
+                           </option>
+                       ))}
+                 </select>
+
               </div>
 
               <hr />
@@ -122,24 +159,14 @@ function InventoryEditForm({handleFormSave}){
                     
                     <div className='itemAvail__frame'>
                       <label className='itemDetails__label-h3' htmlFor="">Warehouse</label>
-                     
-                          
-                          <select className='itemAvail__dropdown'>
-                              <option value="1">Manhattan</option>
-                              <option value="2">Washington</option>
-                              <option value="3">Jersey</option>
-                              <option value="4">SF</option>
-                              <option value="5">Santa Monica</option>
-                              <option value="6">Seattle</option>
-                              <option value="7">Miami</option>
-                              <option value="8">Boston</option>
-                          </select>
-                             {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M7 10L12 15L17 10H7Z" fill="#5C667E"/>
-                             </svg> */}
-                         
-                      
-   
+                       {/*warehouse dropdown */}
+                      <select className="itemAvail__dropdown">
+                       {warehouses.map((warehouse) => (
+                           <option key={warehouse.id} value={warehouse.id}>
+                               {warehouse.warehouse_name}
+                           </option>
+                       ))}
+                      </select>
                     </div>
               </div>
   
