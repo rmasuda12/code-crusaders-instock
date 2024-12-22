@@ -132,7 +132,7 @@ function WarehouseEditForm() {
                 className="wh-edit__formfield"
               />
             </div>
-            <div className="wh-edit__form-container">
+            <div className="wh-edit__contactform-container">
               <h2 className="wh-edit__details-header">Contact Details</h2>
               <label className="wh-edit__form-label">
                 <h3>Contact Name</h3>
