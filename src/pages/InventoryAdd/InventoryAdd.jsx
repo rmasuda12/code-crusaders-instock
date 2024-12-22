@@ -1,3 +1,4 @@
+
 import './InventoryAdd.scss';
 import arrowBack from '../../assets/icons/arrow_back-24px.svg';
 import InventoryAddForm from '../../components/InventoryAddForm/InventoryAddForm';

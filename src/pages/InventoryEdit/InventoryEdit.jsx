@@ -1,7 +1,7 @@
 import './InventoryEdit.scss'
 import arrowBack from '../../assets/icons/arrow_back-24px.svg';
 import InventoryEditForm from '../../components/InventoryEditForm/InventoryEditForm';
-import { NavLink, useNavigate,useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 

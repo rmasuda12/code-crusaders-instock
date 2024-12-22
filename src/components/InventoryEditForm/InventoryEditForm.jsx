@@ -11,7 +11,6 @@ function InventoryEditForm(){
       const [warehouses, setWarehouses] = useState([]);
       const navigate = useNavigate();
       const params = useParams();
-      
 
       const [formValues, setFormValues] = useState({
         warehouse_name:'',
@@ -28,7 +27,14 @@ function InventoryEditForm(){
          navigate('/inventorydetails');
       
         }
-      
+
+      function handleQuantityClick (){
+        setOpenQuantity(!openQuantity);
+        setIsChecked(!isChecked);
+        
+       
+      }
+
       function handleInputChange(event){
         const {name, value} = event.target;
         setFormValues((prevData) =>({
@@ -210,6 +216,7 @@ function InventoryEditForm(){
 
                       {/* out of stock */}
                       <li className='itemAvail__list'><input 
+                      className='itemAvail__radio'
                       className='itemAvail__radio'
                       type="radio"
                      
