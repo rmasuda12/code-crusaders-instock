@@ -4,7 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-
 function WarehouseAddForm() {
   const params = useParams();
   const navigate = useNavigate();
@@ -120,7 +119,7 @@ function WarehouseAddForm() {
                 className="wh-new__formfield"
               />
             </div>
-            <div className="wh-new__form-container">
+            <div className="wh-new__contactform-container">
               <h2 className="wh-new__details-header">Contact Details</h2>
               <label className="wh-new__form-label">
                 <h3>Contact Name</h3>

@@ -12,6 +12,7 @@
 }
 
 .test {
+  padding: 1rem 0;
   background-color: $white;
   @include tablet {
     display: flex;
@@ -21,7 +22,18 @@
   width: 100%;
   @include flex-center(column);
   border-bottom: 1px solid $cloud;
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
+  @include tablet {
+    border-bottom: none;
+    border-right: 1px solid $cloud;
+    width: 50%;
+  }
+}
+
+.wh-new__contactform-container {
+  width: 100%;
+  @include flex-center(column);
+  padding: 1rem 2rem;
   @include tablet {
     border-bottom: none;
     width: 50%;
@@ -29,8 +41,8 @@
 }
 
 .wh-new__details-header {
-  padding: 1rem 0;
   color: $instock-black;
+  padding: 1rem 0 0.5rem 0;
 }
 
 .wh-new__form-label {
@@ -43,7 +55,7 @@
   padding: 1rem;
   border-radius: 1.25rem;
   border: 1px solid $cloud;
-  color: $cloud;
+  color: $instock-black;
   @include tablet {
     height: 2.375rem;
   }
@@ -53,12 +65,12 @@
     outline: none;
   }
 }
-
 .wh-new__cta {
   background-color: $light-grey;
   display: flex;
   align-items: center;
   //   padding: 1rem;
+  border-radius: inherit;
   @include tablet {
     padding: 2rem;
     margin-left: auto;
@@ -71,7 +83,7 @@
   background-color: $white;
   border: 1px solid $cloud;
   border-radius: 20px;
-  width: 90%;
+  width: 80%;
   color: $slate;
   @include tablet {
     height: 2.375rem;
@@ -84,15 +96,15 @@
 }
 
 .wh-new__button-save {
-  height: 2.25rem;
+  height: 2.5rem;
   margin: 0.5rem;
   background-color: $instock-indigo;
   border: 1px solid $cloud;
   border-radius: 20px;
-  width: 90%;
+  width: 80%;
   color: $white;
   @include tablet {
-    height: 2.375rem;
+    height: 2.5rem;
     padding: 0rem 1rem;
   }
   &:hover {
