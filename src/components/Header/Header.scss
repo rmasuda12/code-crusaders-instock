@@ -26,6 +26,10 @@
       justify-content: space-between;
       margin-bottom: 5rem;
     }
+    @include desktop{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    }
   }
 
   &-logo {
