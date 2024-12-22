@@ -103,12 +103,12 @@
 
         &.in-stock {
             color: $green;
-            background-color: #D0F0C0;
+            background-color: transparentize($green, 0.93)
         }
 
         &.out-of-stock {
             color: $red;
-            background-color: #FBCEB1;
+            background-color: transparentize($red, 0.93);
         }
 
         @include tablet {
@@ -159,6 +159,16 @@
 
     a {
         text-decoration: none;
+    }
+
+    .NavLink {
+        display: flex;
+    }
+
+    button {
+        border: none;
+        background-color: white;
+        cursor: pointer;
     }
 
 }

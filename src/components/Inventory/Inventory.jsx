@@ -1,34 +1,31 @@
-import './WarehouseInventoryItems.scss'
+import './inventory.scss';
+
+
+import './Inventory.scss'
 import { Link, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DeleteInventory from '../DeleteInventory/DeleteInventory';
 
-function WarehouseInventoryItems ({warehouseId}) {
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    const [inventoryInfo, setInventoryInfo] = useState({});
-  
-    function trashClickHander() {
-      setIsModalOpen(true);
-    }
-    function trashIdHandler(inventory) {
-      setInventoryInfo(inventory)
-    }
+function Inventory ({warehouseId}) {
 
     const [inventoryDetails, setInventoryDetails] = useState([]);
 
     async function getWarehouseInventory() {
-        const response = await axios.get(`http://localhost:8080/warehouses/${warehouseId}/inventories`);
+        const response = await axios.get(`http://localhost:8080/inventories`);
             setInventoryDetails(response.data);
     }
 
     useEffect(() => {
         getWarehouseInventory();
-    }, [warehouseId, isModalOpen]);
+    }, [warehouseId]);
    
+   
+
+
+
     return (
         <>
-            {isModalOpen ? <DeleteInventory setIsModalOpen={setIsModalOpen} inventoryInfo={inventoryInfo}/>: ""}
             <section className='inventory-details__hidden'>
                 <h4 className='inventory-details__hidden-icon'>
                     INVENTORY ITEM
@@ -54,13 +51,19 @@ function WarehouseInventoryItems ({warehouseId}) {
                     <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" fill="#5C667E"/>
                     </svg>
                 </h4>
+                 <h4 className='inventory-details__hidden-icon'>
+                    WAREHOUSE
+                    <svg width="24" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z" fill="#5C667E"/>
+                    </svg>
+                </h4>
                 <h4>ACTIONS</h4>
             </section>
         
             
         <section className='inventory-details'>   
             {inventoryDetails.map((item) => (
-            <section key={item.id} className="inventory-details__container">
+            <section key={item.id} className="inventory-details__container-i">
                     <h4 className='inventory-details__items'>INVENTORY ITEM:</h4>
                     <NavLink to={`/inventories/${item.id}`} className='column'>
                         <h3 className='inventory-details__click-item '>{item.item_name} 
@@ -70,7 +73,7 @@ function WarehouseInventoryItems ({warehouseId}) {
                         </h3>
                     </NavLink>
                     <h4 className='inventory-details__items'>CATEGORY:</h4>
-                    <p className='inventory-details__click-item-value column'>{item.category}</p>
+                    <p className='inventory-details__click-item-value-i column'>{item.category}</p>
 
 
                     <h4 className='inventory-details__items'>STATUS:</h4>
@@ -80,13 +83,17 @@ function WarehouseInventoryItems ({warehouseId}) {
                     </div>
                     <h4 className='inventory-details__items'>QTY:</h4>
                     <p className='inventory-details__quantity-value column'>{item.quantity}</p>
+                    <h4 className='inventory-details__items'>WAREHOUSE:</h4>
+                    <p className='inventory-details__quantity-value column'>{item.warehouse_name}</p>
            
             <section className='inventory-details__icons'>
-                <div className='inventory-details__delete' onClick={()=>{trashClickHander();trashIdHandler(item);}}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" fill="#C94515"/>
-                    </svg>
-                </div>
+                <button onClick={() => openModal()}>
+                    <p className='inventory-details__delete'>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" fill="#C94515"/>
+                        </svg>
+                    </p>
+                </button>
                 <Link to={`/inventories/edit/${item.id}`}>
                     <p className='inventory-details__edit'>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,4 +120,4 @@ function WarehouseInventoryItems ({warehouseId}) {
 }
 
 
-export default WarehouseInventoryItems;
+export default Inventory;
