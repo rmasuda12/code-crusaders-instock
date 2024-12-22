@@ -30,7 +30,7 @@
 
             }
 
-        &__icons-i {
+            &__icons-i {
             display: flex;
             margin-top: 2rem;
             gap: 1rem;
@@ -38,8 +38,9 @@
 
             @include tablet {
                 margin-top: 0;
-                gap: 0;
+                gap: 1rem;
             }
         }
 
+        
   }

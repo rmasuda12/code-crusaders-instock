@@ -217,9 +217,7 @@ function InventoryEditForm(){
                       {/* out of stock */}
                       <li className='itemAvail__list'><input 
                       className='itemAvail__radio'
-                      className='itemAvail__radio'
                       type="radio"
-                     
                       />Out of stock</li>
         
                     </div>
