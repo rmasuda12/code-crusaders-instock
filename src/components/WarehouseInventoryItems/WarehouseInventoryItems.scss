@@ -103,12 +103,12 @@
 
         &.in-stock {
             color: $green;
-            background-color: transparentize($green, 0.93)
+            background-color: $green-with-opacity
         }
 
         &.out-of-stock {
             color: $red;
-            background-color: transparentize($red, 0.93);
+            background-color: $red-with-opacity;
         }
 
         @include tablet {

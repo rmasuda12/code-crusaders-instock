@@ -1,18 +1,24 @@
 import './WarehouseDetailsComponent.scss'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function WarehouseDetailsComponent() {
 
     const { id } = useParams();
+    const navigate = useNavigate();
     const [warehouseDetails, setWarehouseDetails] = useState({});
 
     // Get warehouse details from the API based on id
 
     async function getWarehouseDetails() {
-        const response = await axios.get(`http://localhost:8080/warehouses/${id}`);
-        setWarehouseDetails(response.data);
+        try {
+            const response = await axios.get(`http://localhost:8080/warehouses/${id}`);
+            setWarehouseDetails(response.data);
+        } catch (error) {
+            console.log(error);
+            navigate("notfound");
+        }
     }
 
     useEffect(() => {

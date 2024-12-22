@@ -129,9 +129,9 @@
     }
 
     &__stock {
-        display: inline-block;
         color: $green;
-        background-color: transparentize($green, 0.93);
+        background-color: $green-with-opacity;
+        display: inline-block;
         border-radius: 20px;
         align-items: center;
         justify-content: center;
@@ -147,7 +147,7 @@
     &__stock--not {
         display: inline-block;
         color: $red;
-        background: transparentize($red, 0.93);
+        background: $red-with-opacity;
         border-radius: 20px;
         align-items: center;
         justify-content: center;
