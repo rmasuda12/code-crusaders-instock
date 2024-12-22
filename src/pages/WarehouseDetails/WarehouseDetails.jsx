@@ -11,12 +11,15 @@ function WarehouseDetails () {
     useEffect(() => {}, [id]);
 
 
-return (
-    <>
-    <WarehouseDetailsComponent warehouseId={id} />
-    <WarehouseInventoryItems warehouseId={id} />
-    </>
-);
+    return (
+        <div className='wd__container'>
+            <section className='wd__card' >
+                <WarehouseDetailsComponent warehouseId={id} />
+                <WarehouseInventoryItems warehouseId={id} />
+            </section>
+        </div>
+        
+    );
 
 }
 
