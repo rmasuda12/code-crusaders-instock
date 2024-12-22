@@ -62,9 +62,11 @@ function WarehouseList() {
                 className="warehouses__search"
                 placeholder="Search..."
               />
-              <button className="warehouses__add-button">
-                + Add New Warehouse
-              </button>
+              <Link to="/warehouses/add">
+                <button className="warehouses__add-button">
+                  + Add New Warehouse
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -77,9 +79,11 @@ function WarehouseList() {
                 className="warehouses__search"
                 placeholder="Search..."
               />
-              <button className="warehouses__add-button">
-                + Add New Warehouse
-              </button>
+              <Link to="/warehouses/add">
+                <button className="warehouses__add-button">
+                  + Add New Warehouse
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -151,10 +155,11 @@ function WarehouseList() {
                 >
                   Warehouse
                   <img
-                    className={`warehouses__icon ${sortField === "warehouse_name" && sortAscending
-                      ? "ascending"
-                      : ""
-                      }`}
+                    className={`warehouses__icon ${
+                      sortField === "warehouse_name" && sortAscending
+                        ? "ascending"
+                        : ""
+                    }`}
                     src={SortButton}
                     alt="Sort"
                   />
@@ -162,10 +167,11 @@ function WarehouseList() {
                 <th onClick={() => getWarehouses("address", !sortAscending)}>
                   Address
                   <img
-                    className={`warehouses__icon ${sortField === "address" && sortAscending
-                      ? "ascending"
-                      : ""
-                      }`}
+                    className={`warehouses__icon ${
+                      sortField === "address" && sortAscending
+                        ? "ascending"
+                        : ""
+                    }`}
                     src={SortButton}
                     alt="Sort"
                   />
@@ -175,10 +181,11 @@ function WarehouseList() {
                 >
                   Contact Name
                   <img
-                    className={`warehouses__icon ${sortField === "contact_name" && sortAscending
-                      ? "ascending"
-                      : ""
-                      }`}
+                    className={`warehouses__icon ${
+                      sortField === "contact_name" && sortAscending
+                        ? "ascending"
+                        : ""
+                    }`}
                     src={SortButton}
                     alt="Sort"
                   />
@@ -188,10 +195,11 @@ function WarehouseList() {
                 >
                   Contact Info
                   <img
-                    className={`warehouses__icon ${sortField === "contact_phone" && sortAscending
-                      ? "ascending"
-                      : ""
-                      }`}
+                    className={`warehouses__icon ${
+                      sortField === "contact_phone" && sortAscending
+                        ? "ascending"
+                        : ""
+                    }`}
                     src={SortButton}
                     alt="Sort"
                   />
@@ -231,11 +239,13 @@ function WarehouseList() {
                       alt="Delete"
                       onClick={() => trashClickHandler(warehouse)}
                     />
-                    <img
-                      className="warehouse__icon"
-                      src={EditButton}
-                      alt="Edit"
-                    />
+                    <Link to={`/warehouses/edit/${warehouse.id}`}>
+                      <img
+                        className="warehouse__icon"
+                        src={EditButton}
+                        alt="Edit"
+                      />
+                    </Link>
                   </td>
                 </tr>
               ))}
