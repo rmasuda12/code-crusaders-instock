@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
+
 function WarehouseAddForm() {
   const params = useParams();
   const navigate = useNavigate();
@@ -17,6 +18,8 @@ function WarehouseAddForm() {
     contact_phone: "",
     contact_email: "",
   });
+
+  const options = ["one", "two", "three"];
 
   const handleChangeForm = (event) => {
     const { name, value } = event.target;
@@ -66,7 +69,7 @@ function WarehouseAddForm() {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    navigate("/warehouse");
+    navigate("/warehouses");
   };
 
   return (
