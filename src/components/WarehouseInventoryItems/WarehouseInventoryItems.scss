@@ -4,6 +4,8 @@
 .inventory-details {
     padding: 0 1.5rem;
     background-color: $white;
+    
+   
 
     @include tablet{
         display: flex;
@@ -17,6 +19,13 @@
         padding: 1.5rem 0;
         border-bottom: 1px solid $cloud;
         column-count: 2;
+
+        &:hover {
+            @include desktop {
+                background-color: transparentize($instock-indigo, 0.93);
+            }
+                
+            }
         
     
             @include tablet {
@@ -53,6 +62,10 @@
         display: flex;
         align-items: center;
         color: $instock-indigo;
+
+        &:hover {
+            text-decoration: underline;
+        }
 
         @include tablet {
             padding-left: 1.5rem;
@@ -103,7 +116,7 @@
 
         &.in-stock {
             color: $green;
-            background-color: transparentize($green, 0.93)
+            background-color: transparentize($green, 0.93);
         }
 
         &.out-of-stock {

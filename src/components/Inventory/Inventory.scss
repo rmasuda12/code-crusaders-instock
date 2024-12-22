@@ -11,6 +11,13 @@
             border-bottom: 1px solid $cloud;
             column-count: 2;
 
+            &:hover {
+                @include desktop {
+                    background-color: transparentize($instock-indigo, 0.93);
+                }
+                
+            }
+
 
             @include tablet {
                 justify-content: space-between;
@@ -22,5 +29,17 @@
             }
 
             }
+
+        &__icons-i {
+            display: flex;
+            margin-top: 2rem;
+            gap: 1rem;
+            padding-right: 1.5rem;
+
+            @include tablet {
+                margin-top: 0;
+                gap: 0;
+            }
+        }
 
   }
