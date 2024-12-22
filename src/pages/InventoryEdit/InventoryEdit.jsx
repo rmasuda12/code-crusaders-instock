@@ -6,19 +6,7 @@ import { useNavigate,useParams } from 'react-router-dom';
 
 
 function InventoryEdit(){
-   const navigate = useNavigate();
-    
-
-    function handleFormSave(e){
-      e.preventDefault();
-    }
-
-    function handleCancel(e){
-      e.preventDefault();
-      navigate('/inventorydetails');
-
-  }
-
+  
     return(
 
       <section className='itemDetails'>
@@ -30,11 +18,6 @@ function InventoryEdit(){
             </article> 
 
             <InventoryEditForm />
-
-           <div className='itemDetails__btn-frame'>
-             <button  onClick={handleCancel} className='itemDetails__btn-cancel'>Cancel</button>
-             <button   onClick={() => handleFormSave()} className='itemDetails__btn-active'>Save</button>
-           </div>
            
          </div> 
 
