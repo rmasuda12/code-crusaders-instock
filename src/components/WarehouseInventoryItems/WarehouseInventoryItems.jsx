@@ -99,7 +99,7 @@ function WarehouseInventoryItems ({warehouseId}) {
                 
                     </section>
                 ))}
-           
+                    
            
             </section>
 
