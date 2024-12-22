@@ -134,11 +134,13 @@ function WarehouseList() {
                     alt="Delete"
                     onClick={() => trashClickHandler(warehouse)}
                   />
-                  <img
-                    className="warehouse__icon"
-                    src={EditButton}
-                    alt="Edit"
-                  />
+                  <Link to={`/warehouses/edit/${warehouse.id}`}>
+                    <img
+                      className="warehouse__icon"
+                      src={EditButton}
+                      alt="Edit"
+                    />
+                  </Link>
                 </div>
               </div>
             ))}
