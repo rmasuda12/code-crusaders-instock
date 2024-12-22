@@ -5,126 +5,144 @@ import EditButton from "../../assets/Icons/edit-24px.svg";
 import ChevronRight from "../../assets/Icons/chevron_right-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import DeleteWarehouse from '../../components/DeleteWarehouse/DeleteWarehouse.jsx';
+import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse.jsx";
 
 function WarehouseList({ onWarehouseClick }) {
   //create a state variable called warehouses
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [warehouses, setWarehouses] = useState([]);
   const [warehouseInfo, setWarehouseInfo] = useState({});
+
+  function editClickHandler() {
+    e.preventDefault();
+    console.log("clicked");
+  }
 
   function trashClickHander() {
     setIsModalOpen(true);
   }
   function trashIdHandler(warehouse) {
-    setWarehouseInfo(warehouse)
+    setWarehouseInfo(warehouse);
   }
 
   useEffect(() => {
     const fetchWarehouses = async () => {
-
       const response = await axios.get("http://localhost:8080/warehouses");
-      console.log(response.data)
-      setWarehouses(response.data)
-    }
+      console.log(response.data);
+      setWarehouses(response.data);
+    };
     fetchWarehouses();
-  }, [isModalOpen]
-  )
-
+  }, [isModalOpen]);
 
   return (
     <>
-    {isModalOpen? <DeleteWarehouse setIsModalOpen={setIsModalOpen} warehouseInfo={warehouseInfo}/> : ""}
-    <div className="warehouses">
-      <header className="warehouses__header">
-        <h1 className="warehouses__title">Warehouses</h1>
-        <div className="warehouses__actions">
-          <input
-            type="text"
-            className="warehouses__search"
-            placeholder="Search..."
-            disabled
-          />
-          <button className="warehouses__add-button">
-            + Add New Warehouse
-          </button>
-        </div>
-      </header>
-      <table className="warehouses__table">
-        <thead>
-          <tr>
-            <th onClick={() => getWarehouses("warehouse_name", true)}>
-              Warehouse
-              <img
-                className="warehouses__icon"
-                src={ChevronRight}
-                alt="Sort"
-              />
-            </th>
-            <th onClick={() => getWarehouses("address", true)}>
-              Address
-              <img
-                className="warehouses__icon"
-                src={ChevronRight}
-                alt="Sort"
-              />
-            </th>
-            <th onClick={() => getWarehouses("contact_name", true)}>
-              Contact Name
-              <img
-                className="warehouses__icon"
-                src={ChevronRight}
-                alt="Sort"
-              />
-            </th>
-            <th onClick={() => getWarehouses("contact_phone", true)}>
-              Contact Info
-              <img
-                className="warehouses__icon"
-                src={ChevronRight}
-                alt="Sort"
-              />
-            </th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-
-
-
-          {warehouses.map((warehouse) => (
-            <tr
-              key={warehouse.id}
-              className="warehouses__row">
-              <td><Link className="warehouses__link" to={`/warehouses/${warehouse.id}`}>
-
-                {warehouse.warehouse_name} </Link>
-              </td>
-              <td>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</td>
-              <td>{warehouse.contact_name}</td>
-              <td>
-                {warehouse.contact_phone}
-                <br />
-                {warehouse.contact_email}
-              </td>
-              <td>
+      {isModalOpen ? (
+        <DeleteWarehouse
+          setIsModalOpen={setIsModalOpen}
+          warehouseInfo={warehouseInfo}
+        />
+      ) : (
+        ""
+      )}
+      <div className="warehouses">
+        <header className="warehouses__header">
+          <h1 className="warehouses__title">Warehouses</h1>
+          <div className="warehouses__actions">
+            <input
+              type="text"
+              className="warehouses__search"
+              placeholder="Search..."
+              disabled
+            />
+            <Link className="warehouses__add-link" to="/warehouses/add">
+              <button className="warehouses__add-button">
+                + Add New Warehouse
+              </button>
+            </Link>
+          </div>
+        </header>
+        <table className="warehouses__table">
+          <thead>
+            <tr>
+              <th onClick={() => getWarehouses("warehouse_name", true)}>
+                Warehouse
                 <img
-                  className="warehouse__icon"
-                  src={TrashBin}
-                  alt="Delete Warehouse"
-                  onClick={()=>{ trashClickHander(); trashIdHandler(warehouse);}}
+                  className="warehouses__icon"
+                  src={ChevronRight}
+                  alt="Sort"
                 />
+              </th>
+              <th onClick={() => getWarehouses("address", true)}>
+                Address
                 <img
-                  className="warehouse__icon"
-                  src={EditButton}
-                  alt="Edit Warehouse"
+                  className="warehouses__icon"
+                  src={ChevronRight}
+                  alt="Sort"
                 />
-              </td>
+              </th>
+              <th onClick={() => getWarehouses("contact_name", true)}>
+                Contact Name
+                <img
+                  className="warehouses__icon"
+                  src={ChevronRight}
+                  alt="Sort"
+                />
+              </th>
+              <th onClick={() => getWarehouses("contact_phone", true)}>
+                Contact Info
+                <img
+                  className="warehouses__icon"
+                  src={ChevronRight}
+                  alt="Sort"
+                />
+              </th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {warehouses.map((warehouse) => (
+              <tr key={warehouse.id} className="warehouses__row">
+                <td>
+                  <Link
+                    className="warehouses__link"
+                    to={`/warehouses/${warehouse.id}`}
+                  >
+                    {warehouse.warehouse_name}{" "}
+                  </Link>
+                </td>
+                <td>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</td>
+                <td>{warehouse.contact_name}</td>
+                <td>
+                  {warehouse.contact_phone}
+                  <br />
+                  {warehouse.contact_email}
+                </td>
+                <td>
+                  <img
+                    className="warehouse__icon"
+                    src={TrashBin}
+                    alt="Delete Warehouse"
+                    onClick={() => {
+                      trashClickHander();
+                      trashIdHandler(warehouse);
+                    }}
+                  />
+                  <Link
+                    className="warehouse__edit-icon"
+                    to={`/warehouses/edit/${warehouse.id}`}
+                  >
+                    <img
+                      className="warehouse__icon"
+                      src={EditButton}
+                      alt="Edit Warehouse"
+                    />
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }
