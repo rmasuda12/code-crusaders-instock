@@ -81,7 +81,7 @@ function WarehouseEditForm() {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    navigate("/warehouse");
+    navigate("/warehouses");
   };
 
   return (

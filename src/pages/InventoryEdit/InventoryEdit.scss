@@ -46,14 +46,15 @@
 
     &__box{
         width: 100%;
-        padding-bottom: 1.5rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
     }
     &__form-wrap{
         width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
         @include tablet{
             @include flex-center (row);
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
     }
     &__form{
@@ -61,7 +62,8 @@
 
         @include tablet{
             width: 50%;
-            padding: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
     &__label-h3{

@@ -18,7 +18,7 @@ function InventoryDetails () {
             setInventoryDetails(response.data);
         } catch (error) {
             console.log(`Error: api call was not able to retrieve desired inventory item with id:${params.id}`);
-            navigate("notfound", { replace: true });
+            navigate("notfound");
         }
     }
     
