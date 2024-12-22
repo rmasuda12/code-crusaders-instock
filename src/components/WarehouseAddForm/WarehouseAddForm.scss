@@ -105,9 +105,15 @@
   color: $white;
   @include tablet {
     height: 2.5rem;
-    padding: 0rem 1rem;
+    width: 100%;
+    padding: 0rem 2rem;
+    min-width: max-content;
   }
   &:hover {
     background-color: $graphite;
   }
+}
+
+.wh-new__button-text {
+  flex-wrap: nowrap;
 }
