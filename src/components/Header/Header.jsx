@@ -9,7 +9,7 @@ function Header(){
 
             <div className='header-container'>
 
-             <Link>
+             <Link to='/warehouses'>
 
               <svg className='header-logo' width="129" height="28" viewBox="0 0 129 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M38.7773 22.9996V6.6796H42.0893V22.9996H38.7773Z" fill="white"/>

@@ -14,7 +14,7 @@ function InventoryEditForm(){
       
 
       const [formValues, setFormValues] = useState({
-        warehouse_id:'',
+        warehouse_name:'',
         item_name:'',
         description:'',
         category:'',
@@ -22,12 +22,6 @@ function InventoryEditForm(){
         quantity:'',
       
       });
-
-      
-      
-      // function handleFormSave(e){
-      //    e.preventDefault();
-      //  }
       
       function handleCancel(e){
          e.preventDefault();
@@ -126,7 +120,7 @@ function InventoryEditForm(){
           if(!isFormValid){
             return;
           }
-          const { updated_at, created_at, ...dataToSend } = formValues;
+          const { updated_at, created_at, warehouse_name, ...dataToSend } = formValues;
           console.log('this is new data:',dataToSend);
           console.log('this is form values:', formValues);
           
@@ -147,7 +141,6 @@ function InventoryEditForm(){
     return(
         <>
 
-        
         
            <form  onSubmit={ onSubmit} className='itemDetails__box'>
              <div className='itemDetails__form-wrap'>

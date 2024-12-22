@@ -49,8 +49,8 @@
     }
     &__form-wrap{
         width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         @include tablet{
             @include flex-center (row);
             padding-left: 2rem;
@@ -85,11 +85,12 @@
         @include flex-center(row);
         justify-content: space-between;
         background-color: $light-grey;
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 1rem 1.5rem 1rem 1.5rem;
 
         @include tablet{
             justify-content: flex-end;
             margin-top: 1rem;
+            padding: 1rem 2rem 1rem 2rem;
         }
     }
 
