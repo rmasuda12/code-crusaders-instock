@@ -28,7 +28,7 @@ function Header(){
 
                 <ul className='header-nav__list'>
                     
-                    <Link className='header-nav__link' to='/'>
+                    <Link className='header-nav__link' to='/warehouses'>
                     <li className='header-nav__item-h3'>Warehouses</li>
                     </Link>
                     
