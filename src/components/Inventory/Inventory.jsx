@@ -7,9 +7,17 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DeleteInventory from '../DeleteInventory/DeleteInventory';
 
-function Inventory ({warehouseId}) {
-
+function Inventory () {
     const [inventoryDetails, setInventoryDetails] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [inventoryInfo, setInventoryInfo] = useState({});
+  
+    function trashClickHander() {
+      setIsModalOpen(true);
+    }
+    function trashIdHandler(inventory) {
+      setInventoryInfo(inventory)
+    }
 
     async function getWarehouseInventory() {
         const response = await axios.get(`http://localhost:8080/inventories`);
@@ -18,14 +26,12 @@ function Inventory ({warehouseId}) {
 
     useEffect(() => {
         getWarehouseInventory();
-    }, [warehouseId]);
+    }, [isModalOpen]);
    
-   
-
-
 
     return (
         <>
+        {isModalOpen ? <DeleteInventory setIsModalOpen={setIsModalOpen} inventoryInfo={inventoryInfo}/>: ""}
             <section className='inventory-details__hidden'>
                 <h4 className='inventory-details__hidden-icon'>
                     INVENTORY ITEM
@@ -86,13 +92,11 @@ function Inventory ({warehouseId}) {
                     <p className='inventory-details__quantity-value column'>{item.warehouse_name}</p>
            
                     <section className='inventory-details__icons-i'>
-                        <button onClick={() => openModal()}>
-                        <p className='inventory-details__delete'>
+                        <div className='inventory-details__delete' onClick={()=>{trashClickHander();trashIdHandler(item);}}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM8 9H16V19H8V9ZM15.5 4L14.5 3H9.5L8.5 4H5V6H19V4H15.5Z" fill="#C94515"/>
                             </svg>
-                        </p>
-                        </button>
+                        </div>
                         <Link to={`/inventories/edit/${item.id}`}>
                             <p className='inventory-details__edit'>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -2,142 +2,108 @@
 @use "../../styles/partials/_mixins" as *;
 
 
-body {
-  background-color: $light-grey;
-}
-
-
 .warehouses-main-wrapper {
-position: relative;
+padding: 1rem;
+@include tablet {
+  padding: 1.5rem;
+}
 }
 
 
 .warehouses-wrapper {
-  padding: $padding-m;
-  margin: 0 1rem;
-          height: 100%;
-          position: relative;
-          top: -3.7rem;
-        
-          @include tablet {
-            top: -6.5rem;
-            margin: 0 2rem;
-          }
-        
-          @include desktop {
-            margin: 0 5rem;
-          }
   
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: $white;
+    max-width: 1020px;
+    position: relative;
+    top: -4.5rem;
+
+  @include tablet {
+    top: -7em;
+    margin: auto;
+  }
+
+  th {
+    background: $light-grey;
+  }
 
 
  
 
   .warehouses {
+    border: 10px solid green;
     /* Desktop/Tablet Header Section */
-    &__header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      &__header {
     
-      padding-bottom: 50px;
-      padding-top: 50px;
-      background-color: $light-grey;
-      padding-right: 50px;
-      padding-left: 50px;
-      
-
-      .warehouses__title {
-        font-size: 1.8rem;
-        color: $instock-black;
-      }
-
-      .warehouses__actions {
-        display: flex;
-        gap: $padding-s;
-
-        .warehouses__search {
-          padding: $padding-xxs;
-          border: 1px solid $cloud;
-          border-radius: $padding-xs;
-          font-size: 1rem;
-          flex: 1;
-
-          &::placeholder {
-            color: $slate;
-          }
-        }
-
-        .warehouses__add-button {
-          padding: $padding-xxs $padding-xs;
-          background-color: $instock-indigo;
-          color: $white;
-          border: none;
-          border-radius: $padding-xs;
-          cursor: pointer;
-          text-align: center;
-          transition: background-color 0.2s;
-
-          &:hover {
-            background-color: $instock-indigo;
-          }
-        }
-      }
-    }
-
-    /* Mobile Header Section */
-    &__header-mobile {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 0px;
-      padding: $padding-m;
-      border: 1px solid $cloud;
-      border-radius: 0px 2px;
-      background-color: $white;
-      box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
-
-
-
-      .warehouses__title {
-        font-size: 1.6rem;
-        color: $instock-black;
-        text-align: center;
-      }
-
-      .warehouses__actions {
         display: flex;
         flex-direction: column;
-        gap: $padding-xs;
-        width: 100%;
-
-        .warehouses__search {
-          padding: $padding-xxs;
-          border: 1px solid $cloud;
-          border-radius: $padding-xs;
-          font-size: 1rem;
-          width: 100%;
-
-          &::placeholder {
-            color: $slate;
-          }
-        }
-
-        .warehouses__add-button {
-          padding: $padding-xxs $padding-xs;
-          background-color: $instock-indigo;
-          color: $white;
-          border: none;
-          border-radius: $padding-xs;
-          cursor: pointer;
-          text-align: center;
-
-          &:hover {
-            background-color: $instock-indigo;
-          }
+        padding: 1.5rem;
+        background-color: $white;
+        border-bottom: 1px solid $cloud;
+        border-radius: 4px 4px 0 0;
+    
+        @include tablet {
+          flex-direction: row;
+          border-bottom: none;
+          justify-content: space-between;
         }
       }
-    }
+      
+    
+      &__actions {
+        display: flex;
+        flex-direction: column;
+    
+        @include tablet {
+          flex-direction: row;
+          gap: 1.5rem;
+          
+        }
+      }
+    
+      &__search {
+        margin: 1rem 0;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        background: $white;
+        background-image: url(../../assets/icons/search-24px.svg);
+        background-repeat: no-repeat;
+        background-position:90% 50%;
+        border: 1px solid $cloud;
+        
+    
+        @include tablet {
+        margin: 0;
+        display: flex;
+        width: 12rem;
+        }
+    
+        @include desktop {
+          width: 20rem;
+        }
+      }
+    
+      &__add-button {
+        padding: 0.75rem;
+        background-color: $instock-indigo;
+        color: $white;
+        border: none;
+        border-radius: 20px;
+        width: 100%;
+        cursor: pointer;
+    
+        &:hover {
+          background-color: $graphite;
+        }
+    
+    
+        @include tablet {
+          width: 10rem;
+          height: 2.5rem;
+          padding: 0.5rem;
+        }
+      }
 
     /* Mobile Layout */
     &__mobile {
@@ -229,7 +195,6 @@ position: relative;
             padding: $padding-xxs;
             border-bottom: 1px solid $cloud;
             text-transform: uppercase;
-            font-size: 0.9rem;
             color: $slate;
             cursor: pointer;
 

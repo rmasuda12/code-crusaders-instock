@@ -43,49 +43,26 @@ function WarehouseList() {
 
   return (
     <>
-      {isModalOpen && (
-        <DeleteWarehouse
-          setIsModalOpen={setIsModalOpen}
-          warehouseInfo={warehouseInfo}
-        />
-      )}
+      {isModalOpen ?<DeleteWarehouse setIsModalOpen={setIsModalOpen} warehouseInfo={warehouseInfo}/>: ""}
 
       {/* Main Wrapper for Header and Body */}
       <div className="warehouses-main-wrapper">
         <div className="warehouses-wrapper">
           {/* Desktop/Tablet Header */}
-          <div className="warehouses__header">
-            <h1 className="warehouses__title">Warehouses</h1>
-            <div className="warehouses__actions">
-              <input
-                type="text"
-                className="warehouses__search"
-                placeholder="Search..."
-              />
-              <Link to="/warehouses/add">
-                <button className="warehouses__add-button">
-                  + Add New Warehouse
-                </button>
-              </Link>
-            </div>
-          </div>
 
           {/* Mobile Header */}
-          <div className="warehouses__header-mobile">
-            <h1 className="warehouses__title">Warehouses</h1>
-            <div className="warehouses__actions">
-              <input
-                type="text"
-                className="warehouses__search"
-                placeholder="Search..."
-              />
-              <Link to="/warehouses/add">
-                <button className="warehouses__add-button">
-                  + Add New Warehouse
-                </button>
-              </Link>
-            </div>
-          </div>
+          <header className="inventories__header">
+                        <h1 className="inventories__title">Warehouses</h1>
+                        <div className="inventories__actions">
+                            <input type="text"
+                                className="inventories__search" placeholder="Search..." disabled>
+                            </input>
+                            <Link to={"/warehouses/add"} className="inventories__container-add-button">
+                                <button className="inventories__add-button" >+ Add New Warehouse</button>
+                            </Link>
+                            
+                        </div>
+                    </header>
 
           {/* Mobile View */}
           <div className="warehouses__mobile">
@@ -132,7 +109,7 @@ function WarehouseList() {
                     className="warehouse__icon"
                     src={TrashBin}
                     alt="Delete"
-                    onClick={() => trashClickHandler(warehouse)}
+                    onClick={() => {trashClickHandler(); trashIdHandler(warehouse);}}
                   />
                   <Link to={`/warehouses/edit/${warehouse.id}`}>
                     <img
@@ -239,7 +216,7 @@ function WarehouseList() {
                       className="warehouse__icon"
                       src={TrashBin}
                       alt="Delete"
-                      onClick={() => trashClickHandler(warehouse)}
+                      onClick={() => {trashClickHandler(); trashIdHandler(warehouse);}}
                     />
                     <Link to={`/warehouses/edit/${warehouse.id}`}>
                       <img
