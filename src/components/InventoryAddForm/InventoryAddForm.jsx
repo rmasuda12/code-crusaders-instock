@@ -78,6 +78,7 @@ function InventoryAdd(){
         } catch (error){
             console.error('Error Adding new inventory:', error)
         }
+        navigate("/inventories");
      };
     
 

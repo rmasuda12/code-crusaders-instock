@@ -1,8 +1,9 @@
 import "./WarehouseEditForm.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
 
 function WarehouseEditForm() {
   const params = useParams();
@@ -77,6 +78,8 @@ function WarehouseEditForm() {
       console.log(error);
       alert("Error updating Warehouse");
     }
+
+    navigate("/warehouses");
   };
 
   const handleCancelClick = (e) => {

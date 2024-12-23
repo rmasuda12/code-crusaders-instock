@@ -69,7 +69,7 @@ function Inventory () {
             
             <section className='inventory-details'>   
                 {inventoryDetails.map((item) => (
-                <div className='tablet'>
+                <div className='tablet' key={item.id}>
                 <section key={item.id} className="inventory-details__container-i">
                     <h4 className='inventory-details__items'>INVENTORY ITEM:</h4>
                     <NavLink to={`/inventories/${item.id}`} className='column'>
@@ -112,7 +112,7 @@ function Inventory () {
                 </div>
                 ))}
                 {inventoryDetails.map((item) => (
-                <div className='mobile'>
+                <div className='mobile' key={item.id}>
                 <section key={item.id} className="inventory-details__mobile">
                     <div className='test-wrapper'>
                     <h4 className='item_label'>INVENTORY ITEM</h4>

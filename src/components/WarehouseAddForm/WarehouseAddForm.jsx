@@ -64,6 +64,7 @@ function WarehouseAddForm() {
       console.log(error);
       alert("Error updating Warehouse");
     }
+    navigate("/warehouses");
   };
 
   const handleCancelClick = (e) => {
