@@ -24,7 +24,7 @@ function InventoryEditForm(){
       
       function handleCancel(e){
          e.preventDefault();
-         navigate('/inventorydetails');
+         navigate('/inventories');
       
         }
 
@@ -190,8 +190,6 @@ function InventoryEditForm(){
                  </select>
 
               </div>
-
-              <hr />
 
               <div className='itemAvail'>
 

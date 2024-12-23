@@ -13,11 +13,11 @@ function InventoryEdit(){
 
          <div className='itemDetails__container'>
             <article className='itemDetails__wrap'>
-               <NavLink to='/inventories'>
-               <img src={arrowBack} alt='back arrow' className='item__arrow' />
+               <NavLink className='itemDetails__arrow' to='/inventories'>
+               <img src={arrowBack} alt='back arrow' />
                </NavLink>
                
-               <h1 className='item__item'> Edit Inventory Item</h1>
+               <h1 className='itemDetails__item'> Edit Inventory Item</h1>
             </article> 
 
             <InventoryEditForm />

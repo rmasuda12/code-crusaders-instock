@@ -11,6 +11,7 @@
   align-items: center;
 
   @include tablet {
+    padding: 1.5rem;
     @include flex-center(row);
     height: 11.625rem;
   }
@@ -23,12 +24,10 @@
 
     @include tablet {
       @include flex-center(row);
+      max-width: 1020px;
+      margin: 0 auto;
       justify-content: space-between;
       margin-bottom: 5rem;
-    }
-    @include desktop{
-    padding-left: 5rem;
-    padding-right: 5rem;
     }
   }
 
@@ -38,7 +37,7 @@
 
     @include tablet {
       margin-top: 0;
-      padding-left: 1rem;
+      // padding-left: 1rem;
     }
   }
 

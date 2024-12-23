@@ -8,31 +8,9 @@ import { Link } from "react-router-dom";
 axios.defaults.baseURL = "http://localhost:8080/inventories";
 
 function InventoryList({ onInventoryClick }) {
-    const [inventories, setInventories] = useState([]);
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    const [inventoryInfo, setInventoryInfo] = useState({});
-  
-    function trashClickHander() {
-      setIsModalOpen(true);
-    }
-    function trashIdHandler(inventory) {
-      setInventoryInfo(inventory)
-    }
-
-    useEffect(() => {
-        const fetchInventories = async () => {
-
-            const response = await axios.get("http://localhost:8080/inventories");
-            console.log(response.data)
-            setInventories(response.data)
-        }
-        fetchInventories();
-    }, [isModalOpen]
-    )
 
     return (
         <>
-            {isModalOpen ? <DeleteInventory setIsModalOpen={setIsModalOpen} inventoryInfo={inventoryInfo}/>: ""}
             <div className="inventories-list__container">
                 <section className="inventories-list__card">
                     <section className="inventories">

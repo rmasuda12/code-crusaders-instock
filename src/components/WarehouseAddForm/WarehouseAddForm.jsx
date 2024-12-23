@@ -172,7 +172,7 @@ function WarehouseAddForm() {
               <h3 className="wh-new__cancel-text">Cancel</h3>
             </button>
             <button className="wh-new__button-save" type="submit">
-              <h3 className="wh-new__button-text">+Add Warehouse</h3>
+              <h3 className="wh-new__button-text">+ Add Warehouse</h3>
             </button>
           </section>
         </form>

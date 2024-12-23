@@ -5,37 +5,37 @@
 
 
 .itemDetails{
-    width: 100%;
-    padding: 1rem;
-    align-items: center;
+    display: flex;
+    padding: 0 1rem;
     position: relative;
-    top: -2rem;
+    top: -3.5rem;
     @include tablet{
-        top: -5rem;
-        padding: 2rem;
+        top: -5.5rem;
+        padding: 0 1.5rem;
     }
-
     &__wrap{
-        width: 100%;
-        height: 5rem;
-        @include flex-center(row);
-        padding: 1rem;
+        margin: auto;
+        display: flex;
+        padding: 1.5rem;
         border-bottom: 1px solid $cloud;
         margin-bottom: 1rem;
         align-items: center;
     }
-    &__icon{
-        height: 1.5rem;
+
+    &__arrow {
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
     }
  
     &__title-h2{
-        padding-top: 1rem;
         padding-bottom: 1rem;
     }
 
     &__container{
+        max-width: 1020px;
         width: 100%;
         background: $white;
+        border-radius: 4px;
         box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
         margin:  0 auto;
         
@@ -57,31 +57,32 @@
         padding-right: 1.5rem;
         @include tablet{
             @include flex-center (row);
-            padding-left: 2rem;
-            padding-right: 2rem;
         }
     }
     &__form{
         @include flex-center(column);
+        border-bottom: 1px solid $cloud;
 
         @include tablet{
+            border-bottom: none;
+            border-right: 1px solid $cloud;
             width: 50%;
-            padding-left: 1rem;
-            padding-right: 1rem;
+            padding-right: 2rem;
         }
     }
     &__label-h3{
-        
         @include label-padding;
+        padding-bottom: 0.5rem;
     }
     &__input{
        @include input-field;
     }
     &__text{
-        border-radius: 1.25rem;
+        border-radius: 1.5rem;
         margin-bottom: 1rem;
         padding: 1rem;
         resize: none;
+        border: 1px solid $cloud;
     }
     &__btn-frame{
         width: 100%;
