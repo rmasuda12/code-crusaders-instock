@@ -23,7 +23,7 @@
 
     .warehouse-edit__header-link {
       width: 100%;
-      height: 5rem;
+      padding: 1.5rem;
       text-decoration: none;
       color: inherit;
       @include flex-center(row-reverse);
@@ -34,13 +34,6 @@
       @include tablet {
         justify-content: flex-end;
         padding-left: 2rem;
-      }
-
-      &__header-text {
-        padding: 0.5rem;
-      }
-      &__icon {
-        height: 1.5rem;
       }
     }
   }

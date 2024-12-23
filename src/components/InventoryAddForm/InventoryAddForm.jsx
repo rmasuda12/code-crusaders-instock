@@ -161,8 +161,6 @@ function InventoryAdd(){
 
               </div>
 
-              <hr />
-
               <div className='itemAvail'>
 
                   <h2 className='itemDetails__label-h3'>Item Availability</h2>

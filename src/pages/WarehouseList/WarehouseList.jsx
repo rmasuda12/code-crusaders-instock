@@ -7,6 +7,7 @@ import SortButton from "../../assets/icons/sort-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse.jsx";
+import WarehouseMobile from "../../components/WarehouseMobile/WarehouseMobile.jsx"
 
 function WarehouseList() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,66 +64,8 @@ function WarehouseList() {
                             
                         </div>
                     </header>
-
-          {/* Mobile View */}
-          <div className="warehouses__mobile">
-            {warehouses.map((warehouse) => (
-              <div key={warehouse.id} className="warehouses__mobile-card">
-                <div className="mobile-card-section">
-                  <div className="mobile-card-title">Warehouse</div>
-                  <div className="mobile-card-details">
-                    <Link
-                      className="warehouses__link"
-                      to={`/warehouses/${warehouse.id}`}
-                    >
-                      {warehouse.warehouse_name}
-                    </Link>
-                    <img
-                      className="warehouses__chevron"
-                      src={ChevronRight}
-                      alt="Chevron"
-                    />
-                  </div>
-                </div>
-
-                <div className="mobile-card-section">
-                  <div className="mobile-card-title">Address</div>
-                  <div>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</div>
-                </div>
-
-                <div className="mobile-card-section">
-                  <div className="mobile-card-title">Contact Name</div>
-                  <div>{warehouse.contact_name}</div>
-                </div>
-
-                <div className="mobile-card-section">
-                  <div className="mobile-card-title">Contact Info</div>
-                  <div>
-                    {warehouse.contact_phone}
-                    <br />
-                    {warehouse.contact_email}
-                  </div>
-                </div>
-
-                <div className="mobile-card-actions">
-                  <img
-                    className="warehouse__icon"
-                    src={TrashBin}
-                    alt="Delete"
-                    onClick={() => {trashClickHandler(); trashIdHandler(warehouse);}}
-                  />
-                  <Link to={`/warehouses/edit/${warehouse.id}`}>
-                    <img
-                      className="warehouse__icon"
-                      src={EditButton}
-                      alt="Edit"
-                    />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
+          <WarehouseMobile/>
+          
           {/* Desktop/Table View */}
           <table className="warehouses__table">
             <thead>

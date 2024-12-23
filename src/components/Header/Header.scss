@@ -23,12 +23,10 @@
 
     @include tablet {
       @include flex-center(row);
+      max-width: 1020px;
+      margin: 0 auto;
       justify-content: space-between;
       margin-bottom: 5rem;
-    }
-    @include desktop{
-    padding-left: 5rem;
-    padding-right: 5rem;
     }
   }
 
