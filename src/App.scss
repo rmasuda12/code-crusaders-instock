@@ -1,42 +1,85 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "TitilliumWeb";
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-color: $light-grey;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+//page header
+h1 {
+  font-size: 1.75rem; //28px
+  line-height: 2.25rem; //36px
+  @include tablet {
+    font-size: 2rem; //32px
+    line-height: 2.5rem; //40px
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+//subheader
+h2 {
+  font-size: 1.25rem; //20px
+  line-height: 1.75; //28px
+  @include tablet {
+    font-size: 1.5rem; //24px
+    line-height: 2rem; //32px
   }
 }
 
-.card {
-  padding: 2em;
+//labels, links, & buttons
+h3, a, button {
+  font-size: 0.8125rem; //13px
+  line-height: 1rem; //20px
+  @include tablet {
+    font-size: 0.875rem; //14px
+    line-height: 1.375rem; //22px
+  }
 }
 
-.read-the-docs {
-  color: #888;
+//table header
+h4, th {
+  font-size: 0.6875rem; //11px
+  line-height: 1rem; //16px
+  @include tablet {
+    font-size: 0.75rem; //12px
+    line-height: 1.125rem; //18px
+  }
+}
+
+//body text large
+.p1 {
+  font-size: 0.9375rem; //15px
+  line-height: 1.625rem; //26px
+  @include tablet {
+    font-size: 1rem; //16px
+    line-height: 1.75rem; //28px
+  }
+}
+
+//body text medium (P2)
+p, td {
+  font-size: 0.8125rem; //13px
+  line-height: 1.25rem; //20px
+  @include tablet {
+    font-size: 0.875rem; //14px
+    line-height: 1.375rem; //22px
+  }
+}
+
+// example use <p classname"otherclass p3">
+//body text small
+.p3 {
+  font-size: 0.6875rem; //11px
+  line-height: 1rem; //16px
+  @include tablet {
+    font-size: 0.75rem; //12px
+    line-height: 1.125rem; //18px
+  }
 }

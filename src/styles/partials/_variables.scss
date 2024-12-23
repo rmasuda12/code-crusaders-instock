@@ -1,0 +1,37 @@
+//primary color
+$instock-black: #13182C;
+$instock-indigo: #2E66E5;
+$white: #ffffff;
+
+//secondary color
+$slate: #5C667E;
+$cloud: #BDC5D5;
+
+//backgound color
+$graphite: #232940;
+$light-grey: #f7f8f9;
+
+//supporting color
+$green: #158463;
+$red: #C94525;
+$green-with-opacity: rgba($green, 0.07);
+$red-with-opacity: rgba($red, 0.07);
+
+//breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+$mobile-width: 767px;
+
+
+//padding
+$padding-9xl: 128px;
+$padding-xxxl: 80px;
+$padding-xxl: 64px;
+$padding-xl: 56px;
+$padding-l: 48px;
+$padding-m: 40px;
+$padding-sm: 32px;
+$padding-s: 24px;
+$padding-xs: 16px;
+$padding-xxs: 8px;
+$padding-xxxs: 4px;

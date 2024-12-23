@@ -1,0 +1,40 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.wh-edit__container {
+  margin: 0 1rem;
+  height: 100%;
+  position: relative;
+  top: -1.5rem;
+  display: flex;
+  @include tablet {
+    top: -5rem;
+    margin: 0 1.5rem;
+  }
+
+  .wh-edit__card {
+    // @include flex-center(column);
+    max-width: 1020px;
+    margin: auto;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: $white;
+
+    .warehouse-edit__header-link {
+      width: 100%;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      @include flex-center(row-reverse);
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid $cloud;
+      border-radius: inherit;
+      @include tablet {
+        justify-content: flex-end;
+        padding-left: 2rem;
+      }
+    }
+  }
+}
