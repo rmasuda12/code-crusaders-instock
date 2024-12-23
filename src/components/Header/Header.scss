@@ -11,6 +11,7 @@
   align-items: center;
 
   @include tablet {
+    padding: 1.5rem;
     @include flex-center(row);
     height: 11.625rem;
   }
@@ -36,7 +37,7 @@
 
     @include tablet {
       margin-top: 0;
-      padding-left: 1rem;
+      // padding-left: 1rem;
     }
   }
 

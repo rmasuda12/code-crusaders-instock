@@ -64,7 +64,7 @@ h4, th {
 }
 
 //body text medium (P2)
-p {
+p, td {
   font-size: 0.8125rem; //13px
   line-height: 1.25rem; //20px
   @include tablet {
