@@ -36,7 +36,7 @@ function Inventory () {
             
             <section className='inventory-details'>   
                 {warehouses.map((item) => (
-                <div className='mobile'>
+                <div className='mobile' key={item.id}>
                 <section key={item.id} className="inventory-details__mobile">
                     <div className='test-wrapper'>
                     <h4 className='item_label'>INVENTORY ITEM</h4>

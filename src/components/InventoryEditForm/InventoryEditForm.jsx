@@ -139,6 +139,7 @@ function InventoryEditForm(){
             console.log(error);
             alert('Error unpdating Inventory');
           }
+          navigate("/inventories");
       };
       
 

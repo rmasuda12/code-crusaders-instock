@@ -18,8 +18,13 @@ function WarehouseInventoryItems ({warehouseId}) {
     const [inventoryDetails, setInventoryDetails] = useState([]);
 
     async function getWarehouseInventory() {
-        const response = await axios.get(`http://localhost:8080/warehouses/${warehouseId}/inventories`);
-            setInventoryDetails(response.data);
+        try {
+            const response = await axios.get(`http://localhost:8080/warehouses/${warehouseId}/inventories`);
+            setInventoryDetails(response.data);            
+        } catch (error) {
+            console.log(error)
+        }
+        
     }
 
     useEffect(() => {
@@ -99,7 +104,7 @@ function WarehouseInventoryItems ({warehouseId}) {
                     </section>
                 ))}
                 {inventoryDetails.map((item) => (
-                <div className='mobile'>
+                <div className='mobile' key={item.id}>
                 <section key={item.id} className="inventory-details__mobile">
                     <div className='test-wrapper'>
                     <h4 className='item_label'>INVENTORY ITEM</h4>
